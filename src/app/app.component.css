@@ -1,0 +1,14 @@
+
+.top-spacer {
+    background-color: var(--purple);
+}
+
+.footer-header{
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+}
+
+.header{
+}

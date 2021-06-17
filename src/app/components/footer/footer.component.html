@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+
+    <mat-button-toggle-group #group="matButtonToggleGroup" value="currentPath">
+
+        <mat-button-toggle value="/index" aria-label="Text align center" (click)="gotoIndex('true')">
+            <mat-icon>search</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle value="" aria-label="Text align right" (click)="gotoAnimal()">
+          <mat-icon>pets</mat-icon>
+        </mat-button-toggle>
+        
+        <mat-button-toggle mat-icon-button aria-label="Text align left" (click)="gotoUser('true')">
+            <mat-icon>account_circle</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle value="justify" aria-label="Text align justify" (click)="gotoConfig('true')">
+            <mat-icon>settings</mat-icon>
+        </mat-button-toggle>
+
+    </mat-button-toggle-group>
+
+</mat-toolbar>
+

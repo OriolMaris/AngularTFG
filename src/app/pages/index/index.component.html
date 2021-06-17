@@ -1,0 +1,40 @@
+<mat-grid-list cols="2" rowHeight="48px">
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        >
+        <mat-button-toggle style="width: 100%; margin: 4px;  height: 40px;" (click)="gotoAdvSearch()" >
+        Adv search
+        </mat-button-toggle>
+    
+    </mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        >
+        <mat-button-toggle style="width: 100%; margin: 4px; height: 40px;">
+            Recomended
+        </mat-button-toggle>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="content">   
+    <mat-tab-group mat-align-tabs="center" backgroundColor="primary" [selectedIndex]="selectedIndex">
+        <mat-tab label="All" >
+            <app-animals-grid></app-animals-grid>
+        </mat-tab>
+        <mat-tab label="Favourites">
+            <app-cats-grid></app-cats-grid>
+        </mat-tab>
+        <mat-tab label="Dogs" (click)="setIndex(1)">
+            <app-dogs-grid></app-dogs-grid>
+        </mat-tab>
+        <mat-tab label="Cats">
+            <app-cats-grid></app-cats-grid>
+        </mat-tab>
+        
+    </mat-tab-group>
+</div>
+
+
+<app-footer class="footer-header"></app-footer>

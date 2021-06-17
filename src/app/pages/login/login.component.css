@@ -1,0 +1,64 @@
+mat-grid-list{
+    background-color: lightsteelblue;
+}
+
+
+.colum {
+    width: 100%;
+    margin-top: 48px; 
+    margin-left: 32px; 
+    margin-right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .loginbtt {
+      width: 128px;
+      margin-top: 24px;
+  }
+
+  .space_line {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+  }
+
+  .space_line_1 {
+      width: 50%;
+  }
+
+  .space_between {
+      margin-left: 16px;
+      margin-right: 16px;
+  }
+
+  .register {
+      padding-left: 8px;
+      padding-right: 16px;
+      margin-top: -64px;
+      display: flex;
+      align-items: center;
+      width: 80%;
+      height: 30%;
+      border:  1px solid grey ;
+  }
+
+
+  .spanw {
+      width: 67%;
+  }

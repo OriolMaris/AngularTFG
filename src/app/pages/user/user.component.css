@@ -1,0 +1,55 @@
+mat-grid-list{
+  background-color: lightsteelblue;
+}
+
+.back_button {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .footer-header{
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.div_name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.name_age{
+  padding-top: 10px;
+  padding-left: 16px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.name_race{
+  font-size: medium;
+  padding-top: 3%;
+  padding-left: 16px;
+}
+.name_place{
+  font-size: larger;
+  padding-top: 3%;
+  padding-left: 16px;
+}
+.default_div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

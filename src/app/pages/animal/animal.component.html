@@ -1,0 +1,206 @@
+
+<mat-grid-list cols="8">
+    <mat-grid-tile
+        [colspan]="8"
+        [rowspan]="6"
+        >
+        <div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div>
+        <div style=" background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);" class="photo"></div>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="0.5"
+    >
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="2"
+    [rowspan]="0.5"
+    >
+    <div class="icons_div">
+            <span *ngIf="isFav" (click)="deleteFav()">fav </span>
+            <span *ngIf="!isFav" (click)="addFav()">Not fav </span>
+    </div>
+    
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="2"
+    [rowspan]="0.5"
+    >
+    <div class="icons_div">
+            <span (click)="goEditAnimal()"> edit </span>
+    </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="2"
+    [rowspan]="0.5"
+    >
+    <div class="icons_div">
+            <span (click)="openDialog()"> erase</span>
+    </div>
+</mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="6"
+        [rowspan]="2"
+        >
+        <div class="div_name">
+            <div class="name_age">
+                <span>{{animal.name}}, </span>
+                <span>{{animal.age}}</span>
+            </div>
+            <div class="name_race">
+                <span>{{animal.race}}</span>
+            </div>
+            <div class="name_place">
+                <span>Barcelona</span>
+            </div>
+           
+
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="2"
+        [rowspan]="2"
+        >
+        <div class="sex_icon_content">
+            <img class="sex_icon" *ngIf="animal.sexe === 'female'" src="https://img.icons8.com/android/24/000000/female.png"/>
+            <img class="sex_icon" *ngIf="animal.sexe === 'male'" src="https://img.icons8.com/android/24/000000/male.png"/>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]="8"
+    [rowspan]="1"
+    >
+    <div class="name_place">
+        <span>Owner: {{owner}} </span>
+        <span>tel: {{tel}}</span>
+    </div>
+</mat-grid-tile>
+<mat-grid-tile
+[colspan]="4"
+[rowspan]="6"
+>
+    <div class="default_div_left">
+        <div class="radio-group">
+            <div class="span_text">
+                Tamany:
+            </div>
+            <mat-radio-group
+            [(ngModel)]="tamanyToggle"
+            aria-label="example-radio-group"
+            [disabled]="true"
+            name="tamany"
+            
+            >
+            <mat-radio-button value="small" >
+                Petit
+            </mat-radio-button>
+            <mat-radio-button value="medium" >
+                Mitjà
+            </mat-radio-button>
+            <mat-radio-button value="big" >
+                Gran
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="radio-group">
+        <div class="span_text">
+            Castrat:
+        </div>
+        <mat-radio-group 
+        value="tamany"
+        [(ngModel)]="castratToggle"
+        aria-label="example-radio-group-2"
+        [disabled]="true"
+
+        
+        >
+        <mat-radio-button value="true">
+            si
+        </mat-radio-button>
+        <mat-radio-button value="false">
+            no
+        </mat-radio-button>
+    </mat-radio-group>
+</div>
+<div class="radio-group">
+    <div class="span_text">
+        Conte microxip:
+    </div>
+    <mat-radio-group 
+    value="tamany"
+    [(ngModel)]="microxipToggle"
+    aria-label="example-radio-group-2"
+    [disabled]="true"
+
+    
+    >
+    <mat-radio-button value="true">
+        si
+    </mat-radio-button>
+    <mat-radio-button value="false">
+        no
+    </mat-radio-button>
+</mat-radio-group>
+</div>
+</div>
+</mat-grid-tile>
+<mat-grid-tile
+[colspan]="4"
+[rowspan]="6"
+>
+<div class="default_div">
+    <div class="radio-group">
+        <div class="span_text">
+            Vacunat a l'ultim any:
+        </div>
+    <mat-radio-group
+    [(ngModel)]="vacunatToggle"
+    aria-label="example-radio-group"
+    [disabled]="true"
+
+    >
+        <mat-radio-button value="true">
+            Si
+        </mat-radio-button>
+        <mat-radio-button value="false">
+            No
+        </mat-radio-button>
+    </mat-radio-group>
+    </div>
+    <div class="radio-group">
+        <div class="span_text">
+            Desparasitat a l'ultim any:
+        </div>
+    <mat-radio-group
+    [(ngModel)]="desparasitatToggle" 
+    value="tamany"
+    aria-label="example-radio-group-2"
+    [disabled]="true"
+
+    >
+        <mat-radio-button value="true">
+            si
+        </mat-radio-button>
+        <mat-radio-button value="false">
+            no
+        </mat-radio-button>
+    </mat-radio-group>
+    <img [src]="images[animal.id]" alt="">
+</div>
+</div>
+    </mat-grid-tile>
+<mat-grid-tile  
+    [colspan]="8"
+    [rowspan]="5"
+    ><div class="new_test">
+        Descripció:
+            {{descripcio}}
+    </div> 
+
+</mat-grid-tile>
+
+</mat-grid-list>
+
+
+
+<app-footer class="footer-header"></app-footer>

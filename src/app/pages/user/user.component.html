@@ -1,0 +1,52 @@
+<mat-grid-list cols="4" rows="8">
+    <mat-grid-tile
+        [colspan]="4"
+        [rowspan]="2"
+        >
+        <div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div>
+        <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Avatar" class="avatar">
+    </mat-grid-tile>
+
+    <mat-grid-tile
+        [colspan]="4"
+        [rowspan]="0.5"
+        >
+        <div class="div_name">
+            <div class="name_age">
+                <span>{{user.name}} </span>
+                <span style="font-weight: lighter;">tel.</span>
+                <span> {{user.telefon}} </span>
+            </div>
+            
+           
+
+        </div>
+    </mat-grid-tile>
+    
+    
+
+</mat-grid-list>
+
+<div style="display: flex; flex-direction: row;">
+    <mat-button-toggle style="width: 50%; margin: 4px;" (click)="addAnimal()">
+        addAnimal
+    </mat-button-toggle>
+    
+    <mat-button-toggle style="width: 50%; margin: 4px;" (click)="editUser()">
+        edit User
+    </mat-button-toggle>
+</div>
+
+
+<mat-tab-group mat-align-tabs="center" backgroundColor="primary" [selectedIndex]="">
+    <mat-tab label="Fav Animals" >
+        <app-fav-grid></app-fav-grid>
+    </mat-tab>
+    <mat-tab label="Owner">
+        <app-own-grid></app-own-grid>
+    </mat-tab>
+</mat-tab-group>
+
+<div style="height: 40px;"></div>
+
+<app-footer class="footer-header"></app-footer>

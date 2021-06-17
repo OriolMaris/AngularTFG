@@ -1,0 +1,66 @@
+mat-grid-list{
+    background-color: lightsteelblue;
+}
+.footer-header{
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+.cofig_idomas {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+mat-radio-group {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+mat-radio-button{
+    margin-top: 32px;
+}
+
+.cat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 33%;
+}
+.en{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+
+}
+.cast{
+    width: 33%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back_button {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+.log_out_btt{
+    width: 140px;
+}

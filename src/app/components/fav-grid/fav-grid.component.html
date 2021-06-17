@@ -1,0 +1,22 @@
+
+<mat-grid-list cols="2" rowHeight="2:2">
+    <div *ngFor="let animal of favAnimalsV2 ">
+        <mat-grid-tile>
+            <mat-card style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg); background-size: cover;"  (click)="gotoAnimal(animal)">
+                <mat-card-content>
+                    
+                    <mat-card-title>{{animal.name}}  {{animal.age}}</mat-card-title>
+                    <img [src]="images[animal.id]" alt="">
+                    
+                    <mat-button-toggle *ngIf="animal.sexe === 'dona'" mat-icon-button aria-label="Text align left" (click)="gotoUser('true')">
+                        <img src="https://img.icons8.com/android/24/000000/female.png"/>
+                    </mat-button-toggle>
+
+                    <mat-button-toggle *ngIf="animal.sexe === 'home3'" mat-icon-button aria-label="Text align left" (click)="gotoUser('true')">
+                        <img src="https://img.icons8.com/android/24/000000/male.png"/>
+                    </mat-button-toggle>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>
