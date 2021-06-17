@@ -108,6 +108,12 @@ mat-radio-group{
     padding-left: 16px;
 }
 
+.back_button {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+  }
+
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
     margin-left: 24px;
     margin-right: 24px;

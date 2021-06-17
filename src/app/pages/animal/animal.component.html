@@ -17,8 +17,8 @@
     [rowspan]="0.5"
     >
     <div class="icons_div">
-            <span *ngIf="isFav" (click)="deleteFav()">fav </span>
-            <span *ngIf="!isFav" (click)="addFav()">Not fav </span>
+            <mat-button-toggle *ngIf="isFav" (click)="deleteFav()">fav </mat-button-toggle>
+            <mat-button-toggle *ngIf="!isFav" (click)="addFav()">Not fav </mat-button-toggle>
     </div>
     
     </mat-grid-tile>
@@ -27,7 +27,7 @@
     [rowspan]="0.5"
     >
     <div class="icons_div">
-            <span (click)="goEditAnimal()"> edit </span>
+            <mat-button-toggle (click)="goEditAnimal()"> edit </mat-button-toggle>
     </div>
     </mat-grid-tile>
     <mat-grid-tile
@@ -35,7 +35,7 @@
     [rowspan]="0.5"
     >
     <div class="icons_div">
-            <span (click)="openDialog()"> erase</span>
+            <mat-button-toggle (click)="openDialog()"> erase</mat-button-toggle>
     </div>
 </mat-grid-tile>
     <mat-grid-tile

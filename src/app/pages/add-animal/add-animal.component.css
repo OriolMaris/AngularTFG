@@ -122,3 +122,9 @@ textarea{
     margin-left: 24px;
     margin-right: 24px;
 }
+
+.back_button {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+  }

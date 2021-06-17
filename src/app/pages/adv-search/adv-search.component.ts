@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AnimalServiceService } from 'src/app/animal-service.service';
 import { cities } from 'src/assets/cities/cities';
 import { races } from 'src/assets/races/races';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-adv-search',
@@ -89,7 +90,7 @@ export class AdvSearchComponent implements OnInit {
   panelOpenState = false;
   
   constructor(
-
+    private location: Location, 
     private serviceAnimal: AnimalServiceService
 
   ) { }
@@ -97,6 +98,10 @@ export class AdvSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goBack() {
+    this.location.back()
+
+  }
 
   writeTest(){
   }

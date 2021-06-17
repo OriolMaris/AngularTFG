@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/user-service.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-register',
@@ -27,9 +28,16 @@ export class RegisterComponent implements OnInit {
     Validators.required,
   ]);
   
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService,
+    private location: Location, 
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  goBack() {
+    this.location.back()
+
   }
 
 

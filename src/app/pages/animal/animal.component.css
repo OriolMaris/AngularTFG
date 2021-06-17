@@ -78,6 +78,7 @@ mat-radio-group{
 }
 
 .icons_div{
+    height: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -133,4 +134,9 @@ mat-divider{
     height: 100%;
     width: 100%;
     top: 0;
+}
+
+mat-button-toggle{
+    border-radius: 25px;
+    background-color:chartreuse;
 }

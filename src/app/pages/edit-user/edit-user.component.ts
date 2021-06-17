@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/user-service.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-edit-user',
@@ -47,7 +48,7 @@ export class EditUserComponent implements OnInit {
 
   constructor(
     private userService: UserServiceService,
-
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
@@ -74,6 +75,11 @@ export class EditUserComponent implements OnInit {
     fd.append('h_dispo', this.selectedDis)
 
     this.userService.editUser(fd, this.user.id);  
+  }
+
+  goBack() {
+    this.location.back()
+
   }
 
 }
