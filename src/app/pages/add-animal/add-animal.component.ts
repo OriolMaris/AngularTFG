@@ -74,7 +74,7 @@ export class AddAnimalComponent implements OnInit {
     {value: 'duro'},
     {value: 'rizado'},
     {value: 'corto'},
-    {value: 'corto'}
+    {value: 'largo'}
   ];
 
   tamanyToggle: string;

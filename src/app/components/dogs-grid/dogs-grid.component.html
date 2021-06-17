@@ -1,12 +1,18 @@
-
 <mat-grid-list cols="2" rowHeight="2:2">
     <div *ngFor="let animal of dogs | async">
         <mat-grid-tile>
-            <mat-card style="background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg); background-size: cover;"  (click)="gotoAnimal(animal)">
+            <mat-card style=" background-size: cover;"  (click)="gotoAnimal(animal)">
                 <mat-card-content>
                     
-                    <mat-card-title>{{animal.name}}  {{animal.age}}</mat-card-title>
-                    <img [src]="images[animal.id]" alt="">
+                    <mat-card-title>{{animal.name}},  {{animal.age}} 
+                        <!-- <img class="sex_icon"  src="https://img.icons8.com/android/24/000000/female.png" height="15px" width="15px"/> -->
+                        <svg *ngIf="animal.sexe === 'female'" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="15px" width="15px"
+
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f1c40f"><path d="M86,6.61538c-25.50541,0 -46.30769,20.80228 -46.30769,46.30769c0,23.25721 17.31371,42.45733 39.69231,45.6875v27.08173h-26.46154v13.23077h26.46154v26.46154h13.23077v-26.46154h26.46154v-13.23077h-26.46154v-27.08173c22.37861,-3.23017 39.69231,-22.43029 39.69231,-45.6875c0,-25.50541 -20.80228,-46.30769 -46.30769,-46.30769zM86,19.84615c18.34736,0 33.07692,14.72957 33.07692,33.07692c0,18.34736 -14.72956,33.07692 -33.07692,33.07692c-18.34735,0 -33.07692,-14.72956 -33.07692,-33.07692c0,-18.34735 14.72957,-33.07692 33.07692,-33.07692z"></path></g></g></svg>
+                        <img class="sex_icon" *ngIf="animal.sexe === 'male'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAB7klEQVRIid2TPW/TUBSGn+PrRB2cOAP0D1RELGwIkCiIUImpCFHxA9hRJLpQ8Q9ADEUKM+ywUNIVIZFkokwdkKqw8yGEkxBFaux7GJxUaUhiJ3SBd7qyz/s+5/hcw78uWcTUqvuaVOOvtgTAWQQwjxaaYFyd997pyDFvBc4Nn53YBKPhCvvj7/8KcKxz5ZPbD2+cGGA83IThda/U/TJe5040N7xli1tGdR04A4hAU0XeGNN/podiRz+L0WjNK3W/T8r6Y8lBw78jynMgN6X5APgGFBX2jY3Wcld/HYUPr/DEJQ/CXwI5FV47Vq71ukter7vkWZUS6A5QAIrAwXj4zAk6DW/ZqmkCOYEH+dXWk4nt1/wtER4BgXHDs96l7tdZgKMJLG552Pm0cIDCldZj0CpQiMLMvVnhxwCiehPARPI0yWRxtuNT7EkFUFgB6EWZj0mmEHdvcCymBsSMdHJcO9xdOA/gM0DG7Z9PMpkoimuE5hwAqQI4Yu8nmQTZBMDGnlQAx4YVoA1yK6j5W9MMQd1/OPjDA8lGleRmRvSzXthw0FcxWKsWZ7vfz3wAyGYPLwiyOQi3IrKRvxzszAUAaNcKt1X0BeBPG0JE7qYJnwgAaL/LndKMKSO6jlIkvmEHqOxKNqrkL3Z+pAn/P/QbhhK+uyx5WpIAAAAASUVORK5CYII=" height="15px" width="15px"/>
+                    </mat-card-title>
+                    <img [src]="images[animal.id]" alt="" width="100%" height="100%">
                     
                     <mat-button-toggle *ngIf="animal.sexe === 'dona'" mat-icon-button aria-label="Text align left" (click)="gotoUser('true')">
                         <img src="https://img.icons8.com/android/24/000000/female.png"/>
@@ -21,4 +27,4 @@
     </div>
 </mat-grid-list>
 
-<p>dogs-grid works!</p>
+

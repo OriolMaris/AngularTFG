@@ -68,4 +68,8 @@ export class IndexComponent implements OnInit {
     
   }
 
+  gotoRecomended(){
+    this.router.navigate(['/recomended']);
+  }
+
 }

@@ -1,3 +1,7 @@
+<div class="background_div">
+
+
+
 <mat-grid-list cols="2" rowHeight="48px">
     <mat-grid-tile
         [colspan]="1"
@@ -12,7 +16,7 @@
         [colspan]="1"
         [rowspan]="1"
         >
-        <mat-button-toggle style="width: 100%; margin: 4px; height: 40px;">
+        <mat-button-toggle style="width: 100%; margin: 4px; height: 40px;" (click)="gotoRecomended()">
             Recomended
         </mat-button-toggle>
     </mat-grid-tile>
@@ -24,7 +28,7 @@
             <app-animals-grid></app-animals-grid>
         </mat-tab>
         <mat-tab label="Favourites">
-            <app-cats-grid></app-cats-grid>
+            <app-fav-grid></app-fav-grid>
         </mat-tab>
         <mat-tab label="Dogs" (click)="setIndex(1)">
             <app-dogs-grid></app-dogs-grid>
@@ -36,5 +40,6 @@
     </mat-tab-group>
 </div>
 
+</div>
 
 <app-footer class="footer-header"></app-footer>

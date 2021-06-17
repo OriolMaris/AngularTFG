@@ -5,7 +5,9 @@
         [rowspan]="6"
         >
         <div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div>
-        <div style=" background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);" class="photo"></div>
+        <div style=" background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);" class="photo">
+            <img [src]="images[animal.id]" alt="" width="100%" height="100%">
+        </div>
     </mat-grid-tile>
     <mat-grid-tile
     [colspan]="1"

@@ -24,6 +24,7 @@ export class AnimalComponent implements OnInit {
   owner;
   tel;
 
+
   animalObs$ = this.store.pipe(select(selectedAnimal));
 
   tamanyToggle: string = '1';
@@ -35,7 +36,7 @@ export class AnimalComponent implements OnInit {
   descripcio: string;
 
   photo_path = this.service.GetPhotosId('4');
-  public images = [];
+  images;
 
   isFav = false;
 
@@ -76,6 +77,8 @@ export class AnimalComponent implements OnInit {
         this.tel = data.tel;
       });
       this.descripcio = this.animal.description;
+      this.images = this.serviceAnimal.imagesAnimal;
+      console.log(this.images)
 
     });
 

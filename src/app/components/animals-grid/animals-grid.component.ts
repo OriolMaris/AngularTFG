@@ -35,8 +35,12 @@ export class AnimalsGridComponent implements OnInit {
     this.serviceAnimal.getAnimals();
     this.AllAnimals = this.serviceAnimal.animals;
     this.images = this.serviceAnimal.imagesAnimal;
+    
     this.AllAnimals.subscribe((data) => {
       console.log(data)
+      console.log('this.images');
+      console.log(this.images);
+      console.log(this.serviceAnimal.imagesAnimal);
     })
   }
 

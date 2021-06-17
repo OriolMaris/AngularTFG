@@ -32,9 +32,15 @@ export class AdvGrid2Component implements OnInit {
   ngOnInit(): void {
 
     this.AllAnimals = this.serviceAnimal.advSearchAnimals;
-    this.images = this.serviceAnimal.imagesadvSearchAnimals;
+    this.images = this.serviceAnimal.imagesAnimal;
+
+    console.log('this.images from advSearch component')
+    console.log(this.images)
+
+
     this.AllAnimals.subscribe((data) => {
-      console.log(data)
+      console.log('this.AllAnimals ------------------------------------->');
+      console.log(data);
     })
   }
 

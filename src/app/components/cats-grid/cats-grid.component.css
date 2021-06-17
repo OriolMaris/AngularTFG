@@ -1,3 +1,9 @@
+.background_div{
+    height: 100%;
+    width: 100%;
+    background-color: cyan;
+}
+
 mat-card {
     width: 80%;
     height: 80%;
@@ -12,15 +18,16 @@ mat-grid-list {
 
 
 mat-card-title{
+    padding-left: 10px;
+    padding-right: 10px;
     color: orange;
     position: absolute;
     right: 0px;
     bottom: 0;
-    max-width: 130px;
     font-size: large;
     font-weight: bold;
-    width: 100%;
     background-color: black;
+    border-radius: 10px;
     
 }
 
@@ -39,7 +46,7 @@ mat-card-content {
     bottom: 0;
     right: 0;
     width: 100%;
-    background-color: blue;
+    height: 100%;
 
 }
 
@@ -56,4 +63,9 @@ mat-card-content {
 .test{
     width: 100%;
     background-color: brown;
+}
+
+img{
+    object-fit:cover;
+    border-radius: 4px;
 }

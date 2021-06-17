@@ -9,6 +9,7 @@ import { EditAnimalComponent } from './pages/edit-animal/edit-animal.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { IndexComponent } from './pages/index/index.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RecomendedComponent } from './pages/recomended/recomended.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserComponent } from './pages/user/user.component';
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   canActivate: [AuthGuardGuard] },
   { path: 'advSearch', component: AdvSearchComponent,
   canActivate: [AuthGuardGuard] },
+  { path: 'recomended', component: RecomendedComponent},
   { path: '**', redirectTo: '/login', pathMatch: 'full'},
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimalServiceService } from 'src/app/animal-service.service';
 
 @Component({
   selector: 'app-recomended',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecomendedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private animalService: AnimalServiceService) { }
 
   ngOnInit(): void {
+    this.animalService.getRecomended(70)
   }
 
 }

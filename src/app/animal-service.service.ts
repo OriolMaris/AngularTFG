@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { props, Store } from '@ngrx/store';
 import { BehaviorSubject } from 'rxjs';
 import { LaravelApiService } from './laravel-api.service';
 import { AnimalI } from './models/animal';
@@ -38,6 +38,9 @@ export class AnimalServiceService {
         this.getImageAnimals(element.photo_name, element.id);
       })
     });
+
+    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
+    console.log(this.imagesAnimal);
   }
 
   getDogs(): void{
@@ -62,9 +65,52 @@ export class AnimalServiceService {
     });
   }
 
+  getRecomended(edat): void{
+    this.apiService.GetIndex().subscribe((prods: any) => {
+     
+
+      this.animals.next(prods);
+      console.log(prods);
+
+      //if (edat > 60) this.animals.value.sort( (a, b) => a.age - b.age);
+
+      if (edat > 60) {
+
+        this.animals.value.sort( (a, b) => {   // aixo ordena be per small medium big
+          if (a.size === 'small' && b.size != 'small'){
+            return -1;
+          }
+          else if (a.size === 'small' && b.size === 'small'){
+            return -1;
+          }
+          else return 1;
+        });
+
+      }
+
+
+      console.log('recomendededdddd');
+      console.log(this.animals.value);
+
+      prods.forEach(element => {
+        this.getImageAnimals(element.photo_name, element.id);
+      })
+    });
+
+    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
+    console.log(this.imagesAnimal);
+  }
+
   getadvSearchAnimals(name, age, race, city, sexe, especie, caracter, hair_type, size, castrat, microxip, vacunat, desparasitat): void{
     this.apiService.GetIndex().subscribe((prods: any) => {
-      console.log(prods);
+      console.log(name)
+      console.log(age)
+      console.log(race)
+      console.log(city)
+      console.log(sexe)
+      console.log(especie)
+      console.log(caracter)
+
 
       let data = prods;
       let advREsult: Array<any> = [];
@@ -73,7 +119,7 @@ export class AnimalServiceService {
       if (!!name){
         data.forEach(element => {
           //comprobar la advSearch
-            if (name == element.name) advREsult.push(element);
+            if (name === element.name) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -82,7 +128,7 @@ export class AnimalServiceService {
       if (!!age){
         data.forEach(element => {
           //comprobar la advSearch
-            if (age == element.age) advREsult.push(element);
+            if (age === element.age) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -90,7 +136,7 @@ export class AnimalServiceService {
       if (!!race){
         data.forEach(element => {
           //comprobar la advSearch
-            if (race == element.race) advREsult.push(element);
+            if (race === element.race) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -98,7 +144,7 @@ export class AnimalServiceService {
       if (!!city){
         data.forEach(element => {
           //comprobar la advSearch
-            if (city == element.ciutat) advREsult.push(element);
+            if (city === element.ciutat) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -106,7 +152,7 @@ export class AnimalServiceService {
       if (!!sexe){
         data.forEach(element => {
           //comprobar la advSearch
-            if (sexe == element.sexe) advREsult.push(element);
+            if (sexe === element.sexe) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -114,7 +160,7 @@ export class AnimalServiceService {
       if (!!especie){
         data.forEach(element => {
           //comprobar la advSearch
-            if (especie == element.species) advREsult.push(element);
+            if (especie === element.species) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -122,7 +168,7 @@ export class AnimalServiceService {
       if (!!caracter){
         data.forEach(element => {
           //comprobar la advSearch
-            if (caracter == element.caracter) advREsult.push(element);
+            if (caracter === element.caracter) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -130,7 +176,7 @@ export class AnimalServiceService {
       if (!!hair_type){
         data.forEach(element => {
           //comprobar la advSearch
-            if (hair_type == element.hair_type) advREsult.push(element);
+            if (hair_type === element.hair_type) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -138,7 +184,7 @@ export class AnimalServiceService {
       if (!!size){
         data.forEach(element => {
           //comprobar la advSearch
-            if (size == element.size) advREsult.push(element);
+            if (size === element.size) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -146,7 +192,7 @@ export class AnimalServiceService {
       if (!!castrat){
         data.forEach(element => {
           //comprobar la advSearch
-            if (castrat == element.castrat) advREsult.push(element);
+            if (castrat === element.castrat) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -154,7 +200,7 @@ export class AnimalServiceService {
       if (!!microxip){
         data.forEach(element => {
           //comprobar la advSearch
-            if (microxip == element.microxip) advREsult.push(element);
+            if (microxip === element.microxip) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -162,7 +208,7 @@ export class AnimalServiceService {
       if (!!vacunat){
         data.forEach(element => {
           //comprobar la advSearch
-            if (vacunat == element.vacunated) advREsult.push(element);
+            if (vacunat === element.vacunated) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
@@ -170,21 +216,26 @@ export class AnimalServiceService {
       if (!!desparasitat){
         data.forEach(element => {
           //comprobar la advSearch
-            if (desparasitat == element.esterizated) advREsult.push(element);
+            if (desparasitat === element.esterizated) advREsult.push(element);
         })
         data = advREsult;
         advREsult = [];
       }
+
       this.advSearchAnimals.next(data);
 
+      console.log('Real data ')
 
       console.log(data)
       
-      // this.advSearchAnimals.next(prods);
-      // console.log(prods)
-      // prods.forEach(element => {
-      //   this.getImageAnimals(element.photo_name, element.id);
-      // })
+      this.advSearchAnimals.next(data);
+
+      console.log(prods)
+      data.forEach(element => {
+      this.getImageAnimals(element.photo_name, element.id);
+
+      console.log(this.imagesadvSearchAnimals)
+      })
     });
   }
 
@@ -204,6 +255,8 @@ export class AnimalServiceService {
     if(image){
       reader.readAsDataURL(image);
     }
+
+    console.log(this.imagesAnimal)
   }
 
   private getImageDogs(name: string, id: string){
