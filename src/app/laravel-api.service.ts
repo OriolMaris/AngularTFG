@@ -191,7 +191,7 @@ export class LaravelApiService {
    
   GetPhotosId(id: string): Observable<Blob> {
     console.log('id : ' + id)
-    return this.http.get(`${this.url}upload/${id}`, {responseType: "blob"});
+    return this.http.get(`${this.url}upload2/${id}`, {responseType: "blob"});
   }
 
   PostAnimalv2(){

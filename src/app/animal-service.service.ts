@@ -65,7 +65,7 @@ export class AnimalServiceService {
     });
   }
 
-  getRecomended(edat): void{
+  getRecomended(edat, hab, carcater, dispo): void{
     this.apiService.GetIndex().subscribe((prods: any) => {
      
 
@@ -87,6 +87,72 @@ export class AnimalServiceService {
         });
 
       }
+
+      let data = prods;
+      let advREsult: Array<any> = [];
+
+
+      if (!!edat){
+        data.forEach(element => {
+          //comprobar la advSearch
+            if (edat > 60) {
+              if (element.species === 'feline' || (element.species === 'cannine' &&  element.size === 'small')) advREsult.push(element);
+            }
+        })
+        data = advREsult;
+        advREsult = [];
+      }
+      console.log(data);
+
+      if (!!hab){
+        data.forEach(element => {
+          //comprobar la advSearch
+          if (hab === 'petita') {
+            if (element.species === 'feline' || (element.species === 'cannine' &&  element.size === 'small')) advREsult.push(element);
+          }
+          else if (hab === 'mitjana') {
+            if ((element.species === 'cannine' &&  element.size === 'medium')) advREsult.push(element);
+          }
+          else if (hab === 'gran') {
+            if ((element.species === 'cannine' &&  element.size === 'big')) advREsult.push(element);
+          }
+        })
+        data = advREsult;
+        advREsult = [];
+      }
+      if (!!carcater){
+        data.forEach(element => {
+          //comprobar la advSearch
+          if (carcater === 'dinamic') {
+            if (element.caracter === 'Juganer' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+          else if (carcater === 'independent') {
+            if (element.caracter === 'Independiente' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+          else if (carcater === 'tranquil') {
+            if (element.caracter === 'Docil' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+          else if (carcater === 'fort') {
+            if (element.caracter === 'Dominante' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+        })
+        data = advREsult;
+        advREsult = [];
+      }
+      if (!!dispo){
+        data.forEach(element => {
+          //comprobar la advSearch
+          if (dispo === 'alta') {
+            if (element.caracter === 'Juganer' || element.caracter === 'Dominante' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+          else if (dispo === 'poco') {
+            if (element.caracter === 'Independiente' || element.caracter === 'Docil' || element.caracter === 'Equilibrado') advREsult.push(element);
+          }
+        })
+        data = advREsult;
+        advREsult = [];
+      }
+
 
 
       console.log('recomendededdddd');

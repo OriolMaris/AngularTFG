@@ -67,7 +67,8 @@ export class AddAnimalComponent implements OnInit {
   caracters: any[] = [
     {value: 'Dominante'},
     {value: 'Equilibrado'},
-    {value: 'Sumiso'},
+    {value: 'Docil'},
+    {value: 'Juganer'},
     {value: 'Independiente'},
   ];
   hair_types: any[] = [
@@ -112,8 +113,8 @@ export class AddAnimalComponent implements OnInit {
       map(value => this._filter2(value))
     );
 
-      this.myControl.setValue('Two');
-  }v
+      //this.myControl.setValue('Two');
+  }
 
 
   private _filter(value: string): string[] {
