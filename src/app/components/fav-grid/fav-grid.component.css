@@ -1,7 +1,7 @@
 .background_div{
     height: 100%;
     width: 100%;
-    background-color: cyan;
+    background-color: #FFE4B5;
 }
 
 mat-card {
@@ -10,7 +10,7 @@ mat-card {
 }
 
 mat-grid-list {
-    background-color: var(--purple);
+    background-color: #FFE4B5;
     padding-top: 4px;
     flex: 1;
 }
@@ -62,10 +62,23 @@ mat-card-content {
 
 .test{
     width: 100%;
-    background-color: brown;
+    background-color: #FFE4B5;
 }
 
 img{
     object-fit:cover;
     border-radius: 4px;
+}
+
+
+
+.noAnimals{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+::ng-deep.mat-tab-body.mat-tab-body-active{
+    background-color: #FFE4B5;
 }

@@ -9,35 +9,31 @@
             <img [src]="images[animal.id]" alt="" width="100%" height="100%">
         </div>
     </mat-grid-tile>
+
     <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="0.5"
-    >
-    </mat-grid-tile>
-    <mat-grid-tile
-    [colspan]="2"
+    [colspan]="4"
     [rowspan]="0.5"
     >
     <div class="icons_div">
-            <mat-button-toggle *ngIf="isFav" (click)="deleteFav()">fav </mat-button-toggle>
-            <mat-button-toggle *ngIf="!isFav" (click)="addFav()">Not fav </mat-button-toggle>
+            <button mat-stroked-button *ngIf="isFav" (click)="deleteFav()">{{'addfav' | translate}} </button>
+            <button mat-stroked-button *ngIf="!isFav" (click)="addFav()">{{'deleteFav' | translate}} </button>
     </div>
     
     </mat-grid-tile>
     <mat-grid-tile
-    [colspan]="2"
+    [colspan]="4"
     [rowspan]="0.5"
     >
-    <div class="icons_div">
-            <mat-button-toggle (click)="goEditAnimal()"> edit </mat-button-toggle>
+    <div *ngIf="!is_owner()" class="icons_div">
+            <button mat-stroked-button (click)="goEditAnimal()"> {{'editAnimal' | translate}} </button>
     </div>
     </mat-grid-tile>
     <mat-grid-tile
-    [colspan]="2"
+    [colspan]="3"
     [rowspan]="0.5"
     >
-    <div class="icons_div">
-            <mat-button-toggle (click)="openDialog()"> erase</mat-button-toggle>
+    <div *ngIf="!is_owner()" class="icons_div">
+            <button mat-stroked-button (click)="openDialog()"> {{'deleteAnimal' | translate}}</button>
     </div>
 </mat-grid-tile>
     <mat-grid-tile
@@ -53,7 +49,7 @@
                 <span>{{animal.race}}</span>
             </div>
             <div class="name_place">
-                <span>Barcelona</span>
+                <span><strong>{{'city' | translate}}</strong> {{animal.ciutat}}</span>
             </div>
            
 
@@ -73,8 +69,8 @@
     [rowspan]="1"
     >
     <div class="name_place">
-        <span>Owner: {{owner}} </span>
-        <span>tel: {{tel}}</span>
+        <span>{{'owner' | translate}}: {{owner}}</span>
+        <span>{{'tel' | translate}}: {{tel}}</span>
     </div>
 </mat-grid-tile>
 <mat-grid-tile
@@ -84,7 +80,7 @@
     <div class="default_div_left">
         <div class="radio-group">
             <div class="span_text">
-                Tamany:
+                {{'size' | translate}}:
             </div>
             <mat-radio-group
             [(ngModel)]="tamanyToggle"
@@ -94,19 +90,19 @@
             
             >
             <mat-radio-button value="small" >
-                Petit
+                {{'small' | translate}}
             </mat-radio-button>
             <mat-radio-button value="medium" >
-                Mitjà
+                {{'medium' | translate}}
             </mat-radio-button>
             <mat-radio-button value="big" >
-                Gran
+                {{'big' | translate}}
             </mat-radio-button>
         </mat-radio-group>
     </div>
     <div class="radio-group">
         <div class="span_text">
-            Castrat:
+            {{'castrat' | translate}}:
         </div>
         <mat-radio-group 
         value="tamany"
@@ -117,16 +113,16 @@
         
         >
         <mat-radio-button value="true">
-            si
+            {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            no
+            {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
 </div>
 <div class="radio-group">
     <div class="span_text">
-        Conte microxip:
+        {{'microxip' | translate}}:
     </div>
     <mat-radio-group 
     value="tamany"
@@ -137,10 +133,10 @@
     
     >
     <mat-radio-button value="true">
-        si
+        {{'yes' | translate}}
     </mat-radio-button>
     <mat-radio-button value="false">
-        no
+        {{'no' | translate}}
     </mat-radio-button>
 </mat-radio-group>
 </div>
@@ -153,7 +149,7 @@
 <div class="default_div">
     <div class="radio-group">
         <div class="span_text">
-            Vacunat a l'ultim any:
+            {{'vacunated' | translate}}:
         </div>
     <mat-radio-group
     [(ngModel)]="vacunatToggle"
@@ -162,16 +158,16 @@
 
     >
         <mat-radio-button value="true">
-            Si
+            {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            No
+            {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
     </div>
     <div class="radio-group">
         <div class="span_text">
-            Desparasitat a l'ultim any:
+            {{'desparasitat' | translate}}:
         </div>
     <mat-radio-group
     [(ngModel)]="desparasitatToggle" 
@@ -181,13 +177,13 @@
 
     >
         <mat-radio-button value="true">
-            si
+            {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            no
+            {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
-    <img [src]="images[animal.id]" alt="">
+    
 </div>
 </div>
     </mat-grid-tile>
@@ -195,7 +191,9 @@
     [colspan]="8"
     [rowspan]="5"
     ><div class="new_test">
-        Descripció:
+        <div class="new_test2">
+            {{'description' | translate}}
+    </div>
             {{descripcio}}
     </div> 
 

@@ -24,6 +24,9 @@ export class AnimalServiceService {
   public advSearchAnimals: BehaviorSubject<AnimalI[]> = new BehaviorSubject<AnimalI[]> ([]);
   public imagesadvSearchAnimals = [];
 
+  public recomendedAnimals: BehaviorSubject<AnimalI[]> = new BehaviorSubject<AnimalI[]> ([]);
+
+
   constructor(private apiService: LaravelApiService,
     private store: Store,
     private router: Router
@@ -157,10 +160,8 @@ export class AnimalServiceService {
 
       console.log('recomendededdddd');
       console.log(this.animals.value);
-
-      prods.forEach(element => {
-        this.getImageAnimals(element.photo_name, element.id);
-      })
+      this.recomendedAnimals.next(data);
+     
     });
 
     console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');

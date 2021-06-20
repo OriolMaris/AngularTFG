@@ -21,6 +21,9 @@ export class EditUserComponent implements OnInit {
     Validators.required,
   ]);
 
+  ageFormControl = new FormControl('', [
+    Validators.required,
+  ]);
 
   selectedEdat: string = '';
   selectedHab: string = '';
@@ -60,7 +63,7 @@ export class EditUserComponent implements OnInit {
     this.nameFormControl.setValue(this.user.name);
     this.telefonFormControl.setValue(this.user.telefon);
 
-    this.selectedEdat = this.user.edat;
+    if (!!this.user.edat && this.user.edat !== "null") this.ageFormControl.setValue(this.user.edat);
     this.selectedHab = this.user.habitatje;
     this.selectedCaracter = this.user.caracter;
     this.selectedDis = this.user.h_dispo;
@@ -71,7 +74,7 @@ export class EditUserComponent implements OnInit {
 
     fd.append('name', this.nameFormControl.value)
     fd.append('telefon', this.telefonFormControl.value)
-    fd.append('edat', this.selectedEdat)
+    fd.append('edat', this.ageFormControl.value)
     fd.append('habitatje', this.selectedHab)
     fd.append('caracter', this.selectedCaracter)
     fd.append('h_dispo', this.selectedDis)

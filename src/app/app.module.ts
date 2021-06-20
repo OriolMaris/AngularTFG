@@ -63,6 +63,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { AdvGridComponent } from './components/adv-grid/adv-grid.component';
 import { AdvGrid2Component } from './components/adv-grid2/adv-grid2.component';
 import { RecomendedComponent } from './pages/recomended/recomended.component';
+import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { RecomendedComponent } from './pages/recomended/recomended.component';
     AdvGridComponent,
     AdvGrid2Component,
     RecomendedComponent,
+    RecomendGridComponent,
   ],
   imports: [
     BrowserModule,

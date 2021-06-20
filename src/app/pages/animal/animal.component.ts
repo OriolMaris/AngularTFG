@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnChanges, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
 import { TranslateService } from '@ngx-translate/core';
 import { select, Store } from '@ngrx/store';
@@ -18,7 +18,7 @@ import { selectAnimal } from 'src/app/state/animal.actions';
   templateUrl: './animal.component.html',
   styleUrls: ['./animal.component.css']
 })
-export class AnimalComponent implements OnInit {
+export class AnimalComponent implements OnInit, OnChanges {
 
   animal;
   owner;
@@ -108,6 +108,45 @@ export class AnimalComponent implements OnInit {
     console.log(this.isFav)
   }
 
+  ngOnChanges(){
+    this.animalObs$.subscribe((data: Animal) => {
+      this.animal = data;
+      console.log(this.animal)
+      if (this.animal === undefined || this.animal === null){
+        this.router.navigate(['/index'])
+      }
+      this.apiService.GetUser(this.animal.owner_id ,'').subscribe((data: any) => {
+        this.owner = data.name;
+        this.tel = data.tel;
+      });
+      this.descripcio = this.animal.description;
+      this.images = this.serviceAnimal.imagesAnimal;
+      console.log(this.images)
+
+    });
+
+    this.tamanyToggle = this.animal.size;
+    this.microxipToggle = String(this.animal.microxip);
+    console.log(this.microxipToggle)
+    console.log(this.animal.microxip)
+    this.vacunatToggle = String(this.animal.vacunated);
+    this.desparasitatToggle = String(this.animal.esterizated);
+    this.castratToggle = String(this.animal.castrat);
+
+    if (this.animal.name === undefined){
+      this.router.navigate(['/index'])
+    }
+
+    console.log(this.animal);
+    console.log('this is FAv  ' + this.animal.id);
+    
+    this.apiService.IsUserFavAnimal(this.userService.user.id, this.animal.id).subscribe((data : any) => {
+      this.isFav = data.message
+      console.log('data.message' + this.userService.user.id + ' ' + this.animal.id)
+      console.log(data.message)
+    });
+  }
+
   addFav(){
     this.userService.PostUserFavAnimal(this.animal.id);
     this.isFav = !this.isFav;
@@ -130,6 +169,13 @@ export class AnimalComponent implements OnInit {
 
   useLanguage(language: string): void {
     this.translate.use(language);
+  }
+
+  is_owner(){
+    if (this.userService.user.id === this.animal.id){
+      return true;
+    }
+    else return false;
   }
 
 }

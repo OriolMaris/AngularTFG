@@ -1,6 +1,7 @@
 mat-button-toggle {
-    background-color: var(--deeppurple);
-    color: blue;
+    background-color: #FF8C00;
+
+    color: black;
     width: 25%;
     height: 100%;
     border: solid 1px var(--deepdarkestpurple);
@@ -8,7 +9,8 @@ mat-button-toggle {
 
 .mat-button-toggle-checked {
     color: white;
-    background-color: var(--deepdarkpurple); 
+    background-color: #FF8C00;
+
 }
  
 
@@ -22,7 +24,8 @@ mat-toolbar{
     padding: 0px;
     margin: 0px;
     border-radius: 0px;
-    background-color: var(--deeppurple);
+    background-color: #FF8C00;
+
 
 
 }

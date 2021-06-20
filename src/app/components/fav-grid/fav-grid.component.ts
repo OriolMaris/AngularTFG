@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserServiceService } from 'src/app/user-service.service';
 
@@ -7,7 +7,7 @@ import { UserServiceService } from 'src/app/user-service.service';
   templateUrl: './fav-grid.component.html',
   styleUrls: ['./fav-grid.component.css']
 })
-export class FavGridComponent implements OnInit {
+export class FavGridComponent implements OnInit, OnChanges {
   
   public favAnimals: BehaviorSubject<any[]> = new BehaviorSubject<any[]> ([]);
   public favAnimalsV2;
@@ -17,6 +17,17 @@ export class FavGridComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.userService.GetUsersFavAnimals();
+
+    this.favAnimals = this.userService.favAnimals;
+    this.images = this.userService.imagesFavAnimals;
+    this.userService.favAnimals.subscribe((data) => {
+      this.favAnimalsV2 = data;
+    })
+    console.log(this.favAnimalsV2)
+  }
+
+  ngOnChanges(): void {
     this.userService.GetUsersFavAnimals();
 
     this.favAnimals = this.userService.favAnimals;

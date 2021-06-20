@@ -12,11 +12,11 @@ import { AnimalServiceService } from 'src/app/animal-service.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-adv-grid2',
-  templateUrl: './adv-grid2.component.html',
-  styleUrls: ['./adv-grid2.component.css']
+  selector: 'app-recomend-grid',
+  templateUrl: './recomend-grid.component.html',
+  styleUrls: ['./recomend-grid.component.css']
 })
-export class AdvGrid2Component implements OnInit, OnChanges {
+export class RecomendGridComponent implements OnInit, OnChanges {
 
   public AllAnimals: BehaviorSubject<any[]> = new BehaviorSubject<any[]> ([]);
   
@@ -30,8 +30,9 @@ export class AdvGrid2Component implements OnInit, OnChanges {
     private serviceAnimal: AnimalServiceService) { }
 
   ngOnInit(): void {
+    
 
-    this.AllAnimals = this.serviceAnimal.advSearchAnimals;
+    this.AllAnimals = this.serviceAnimal.recomendedAnimals;
     this.images = this.serviceAnimal.imagesAnimal;
 
     console.log('this.images from advSearch component')
@@ -45,7 +46,7 @@ export class AdvGrid2Component implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.AllAnimals = this.serviceAnimal.advSearchAnimals;
+    this.AllAnimals = this.serviceAnimal.recomendedAnimals;
     this.images = this.serviceAnimal.imagesAnimal;
 
     console.log('this.images from advSearch component')

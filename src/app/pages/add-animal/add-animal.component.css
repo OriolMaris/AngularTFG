@@ -6,7 +6,15 @@
 }
 
 mat-grid-list{
-    background-color: lightsteelblue;
+    background-color: #FFE4B5;
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #FF8C00;
+}
+
+::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #FF8C00;
 }
 
 
@@ -19,6 +27,10 @@ mat-grid-list{
     flex-direction: column;
     align-items: center;
     height: 100%;
+}
+
+button{
+    background-color: #FF8C00;
 }
 
 .example-form {

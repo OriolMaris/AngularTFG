@@ -7,33 +7,33 @@
         [colspan]="1"
         [rowspan]="1"
         >
-        <mat-button-toggle style="width: 100%; margin: 4px;  height: 40px;" (click)="gotoAdvSearch()" >
-        Adv search
-        </mat-button-toggle>
+        <button mat-stroked-button style="width: 100%; margin: 4px;  height: 40px;" (click)="gotoAdvSearch()" >
+            {{'advSearch' | translate}}
+        </button>
     
     </mat-grid-tile>
     <mat-grid-tile
         [colspan]="1"
         [rowspan]="1"
         >
-        <mat-button-toggle style="width: 100%; margin: 4px; height: 40px;" (click)="gotoRecomended()">
-            Recomended
-        </mat-button-toggle>
+        <button mat-stroked-button style="width: 100%; margin: 4px; height: 40px;" (click)="gotoRecomended()">
+            {{'recomended' | translate}}
+        </button>
     </mat-grid-tile>
 </mat-grid-list>
 
 <div class="content">   
-    <mat-tab-group mat-align-tabs="center" backgroundColor="primary" [selectedIndex]="selectedIndex">
-        <mat-tab label="All" >
+    <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedIndex">
+        <mat-tab label="{{'all' | translate}}" >
             <app-animals-grid></app-animals-grid>
         </mat-tab>
-        <mat-tab label="Favourites">
+        <mat-tab label="{{'favourites' | translate}}">
             <app-fav-grid></app-fav-grid>
         </mat-tab>
-        <mat-tab label="Dogs" (click)="setIndex(1)">
+        <mat-tab label="{{'dogs' | translate}}" (click)="setIndex(1)">
             <app-dogs-grid></app-dogs-grid>
         </mat-tab>
-        <mat-tab label="Cats">
+        <mat-tab label="{{'cats' | translate}}">
             <app-cats-grid></app-cats-grid>
         </mat-tab>
         

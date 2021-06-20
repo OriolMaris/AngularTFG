@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common'
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./cats-grid.component.css']
 })
 
-export class CatsGridComponent implements OnInit {
+export class CatsGridComponent implements OnInit, OnChanges {
 
   public cats: BehaviorSubject<any[]> = new BehaviorSubject<any[]> ([]);
   
@@ -26,6 +26,15 @@ export class CatsGridComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.serviceAnimal.getCats();
+    this.cats = this.serviceAnimal.cats;
+    this.images = this.serviceAnimal.imagesCats;
+    this.cats.subscribe((data) => {
+      console.log(data)
+    })
+  }
+
+  ngOnChanges(): void {
     this.serviceAnimal.getCats();
     this.cats = this.serviceAnimal.cats;
     this.images = this.serviceAnimal.imagesCats;

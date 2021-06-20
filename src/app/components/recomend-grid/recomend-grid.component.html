@@ -1,5 +1,6 @@
+
 <mat-grid-list cols="2" rowHeight="2:2">
-    <div *ngFor="let animal of cats | async">
+    <div *ngFor="let animal of AllAnimals | async">
         <mat-grid-tile>
             <mat-card style=" background-size: cover;"  (click)="gotoAnimal(animal)">
                 <mat-card-content>
@@ -28,4 +29,6 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </mat-grid-list>
 
 
-<div class="noAnimals" *ngIf="!!cats | async"> {{'favAnimalError' | translate}}</div>
+<div class="noAnimals" *ngIf="!!AllAnimals | async"> {{'favAnimalError' | translate}}</div>
+
+

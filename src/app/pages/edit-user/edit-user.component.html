@@ -1,3 +1,5 @@
+<div class="background">
+
 <mat-grid-list cols="4" rows="7"> 
 
     <mat-grid-tile
@@ -8,43 +10,36 @@
     </mat-grid-tile>
     <mat-grid-tile
         [colspan]="4"
-        [rowspan]="8"
+        [rowspan]="6"
         > 
         <div class="colum">
             <form class="example-form">
                 <mat-form-field class="example-full-width">
-                  <mat-label>Name</mat-label>
+                  <mat-label>{{'name' | translate}}</mat-label>
                   <input type="text" matInput [formControl]="nameFormControl" placeholder="Ex. Pedro Martinez">
-                  <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">
-                    Please enter a valid name 
-                  </mat-error>
                   <mat-error *ngIf="nameFormControl.hasError('required')">
-                    Name is <strong>required</strong>
+                    {{'nameREquired' | translate}} <strong>{{'Required' | translate}}</strong>
                   </mat-error>
                 </mat-form-field>
                 
                   <mat-form-field class="example-full-width">
-                    <mat-label>Telefon</mat-label>
+                    <mat-label>{{'telephone' | translate}}</mat-label>
                     <input type="text" matInput [formControl]="telefonFormControl" placeholder="627847564">
-                    <mat-error *ngIf="telefonFormControl.hasError('text') && !telefonFormControl.hasError('required')">
-                      Please enter a valid phone number
-                    </mat-error>
                     <mat-error *ngIf="telefonFormControl.hasError('required')">
-                      Telephone is <strong>required</strong>
+                      {{'telephoneRequired' | translate}} <strong>{{'Required' | translate}}</strong>
                     </mat-error>
                   </mat-form-field>
 
-                  <mat-form-field appearance="fill">
-                    <mat-label>Edat</mat-label>
-                    <mat-select [(ngModel)]="selectedEdat" name="edat">
-                      <mat-option *ngFor="let sexe of edats" [value]="sexe.value">
-                        {{sexe.value}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>{{'age' | translate}}</mat-label>
+                    <input type="text" matInput [formControl]="ageFormControl" placeholder="Ex. pedro@gmail.com" name="Age">
+                    <mat-error *ngIf="ageFormControl.hasError('required')">
+                      {{'ageRequired' | translate}} <strong>{{'Requireda' | translate}}</strong>
+                    </mat-error>
+                </mat-form-field>
 
                   <mat-form-field appearance="fill">
-                    <mat-label>Habitatje</mat-label>
+                    <mat-label>{{'hab' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedHab" name="habitatje">
                       <mat-option *ngFor="let sexe of habitatjes" [value]="sexe.value">
                         {{sexe.value}}
@@ -53,7 +48,7 @@
                   </mat-form-field>
 
                   <mat-form-field appearance="fill">
-                    <mat-label>Disponibilitat</mat-label>
+                    <mat-label>{{'disp' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedDis" name="disponibilitat">
                       <mat-option *ngFor="let sexe of disponibilitats" [value]="sexe.value">
                         {{sexe.value}}
@@ -62,7 +57,7 @@
                   </mat-form-field>
 
                   <mat-form-field appearance="fill">
-                    <mat-label>Caràcter</mat-label>
+                    <mat-label>{{'carac' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedCaracter" name="caracters">
                       <mat-option *ngFor="let sexe of caracters" [value]="sexe.value">
                         {{sexe.value}}
@@ -71,7 +66,7 @@
                   </mat-form-field>
                   
               </form>
-              <button mat-raised-button class="loginbtt" (click)="editUser()">Edit User</button>
+              <button mat-raised-button class="loginbtt" (click)="editUser()">{{'editUser' | translate}}</button>
               
         </div>
     </mat-grid-tile>
@@ -80,3 +75,4 @@
 </mat-grid-list>
 
 
+</div>

@@ -1,3 +1,4 @@
+<div class="background">
 <mat-grid-list cols="4" rows="8">
     <mat-grid-tile
         [colspan]="4"
@@ -13,9 +14,12 @@
         >
         <div class="div_name">
             <div class="name_age">
-                <span>{{user.name}} </span>
-                <span style="font-weight: lighter;">tel.</span>
-                <span> {{user.telefon}} </span>
+                <span> <strong>{{'name' | translate}} </strong>{{user.name}} </span>
+                
+            </div>
+            <div class="name_age">
+
+                <span><strong>{{'tel' | translate}}</strong> {{user.telefon}} </span>
             </div>
             
            
@@ -27,22 +31,22 @@
 
 </mat-grid-list>
 
-<div style="display: flex; flex-direction: row;">
+<div style="display: flex; flex-direction: row; background-color: #FFE4B5;">
     <mat-button-toggle style="width: 50%; margin: 4px;" (click)="addAnimal()">
-        addAnimal
+        {{'addAnimal' | translate}}
     </mat-button-toggle>
     
     <mat-button-toggle style="width: 50%; margin: 4px;" (click)="editUser()">
-        edit User
+        {{'editUser' | translate}}
     </mat-button-toggle>
 </div>
 
 
-<mat-tab-group mat-align-tabs="center" backgroundColor="primary" [selectedIndex]="">
-    <mat-tab label="Fav Animals" >
+<mat-tab-group mat-align-tabs="center" [selectedIndex]="">
+    <mat-tab label="{{'favAnimals' | translate}}" >
         <app-fav-grid></app-fav-grid>
     </mat-tab>
-    <mat-tab label="Owner">
+    <mat-tab label="{{'ownAnimals' | translate}}">
         <app-own-grid></app-own-grid>
     </mat-tab>
 </mat-tab-group>
@@ -50,3 +54,6 @@
 <div style="height: 40px;"></div>
 
 <app-footer class="footer-header"></app-footer>
+
+
+</div>

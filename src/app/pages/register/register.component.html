@@ -1,4 +1,5 @@
-<mat-grid-list cols="4" rows="7"> 
+<div class="background">
+  <mat-grid-list cols="4" rows="7"> 
 
     <mat-grid-tile
         [colspan]="4"
@@ -6,13 +7,7 @@
         >
         <div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div>
     </mat-grid-tile>
-    <mat-grid-tile
-        [colspan]="4"
-        [rowspan]="1"
-        [style.background]="'red'"
-        >
-        logo
-    </mat-grid-tile>
+
     <mat-grid-tile
         [colspan]="4"
         [rowspan]="5"
@@ -20,57 +15,45 @@
         <div class="colum">
             <form class="example-form">
                 <mat-form-field class="example-full-width">
-                  <mat-label>Name</mat-label>
+                  <mat-label>{{'name' | translate}}</mat-label>
                   <input type="text" matInput [formControl]="nameFormControl" placeholder="Ex. Pedro Martinez">
-                  <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">
-                    Please enter a valid name 
-                  </mat-error>
                   <mat-error *ngIf="nameFormControl.hasError('required')">
-                    Name is <strong>required</strong>
+                    {{'nameREquired' | translate}} <strong>{{'Required' | translate}}</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Email</mat-label>
+                    <mat-label>{{'email' | translate}}</mat-label>
                     <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pedro@gmail.com">
                     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                      Please enter a valid email address
+                      {{'emailError' | translate}}
                     </mat-error>
                     <mat-error *ngIf="emailFormControl.hasError('required')">
-                      Email is <strong>required</strong>
+                      {{'emailRequired' | translate}} <strong>{{'Required' | translate}}</strong>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Password</mat-label>
+                    <mat-label>{{'password' | translate}}</mat-label>
                     <input type="password" matInput [formControl]="passwordFormControl" placeholder="********">
-                    <mat-error *ngIf="passwordFormControl.hasError('email') && !passwordFormControl.hasError('required')">
-                      Please enter a valid email address
-                    </mat-error>
                     <mat-error *ngIf="passwordFormControl.hasError('required')">
-                      Password is <strong>required</strong>
+                      {{'passwordRequired' | translate}} <strong>{{'Requireda' | translate}}</strong>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Validate Password</mat-label>
+                    <mat-label>{{'validatePassword' | translate}}</mat-label>
                     <input type="password" matInput [formControl]="valPasswordFormControl" placeholder="********">
-                    <mat-error *ngIf="valPasswordFormControl.hasError('email') && !valPasswordFormControl.hasError('required')">
-                      Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="valPasswordFormControl.hasError('required')">
-                      Password is <strong>required</strong>
+                    <mat-error *ngIf="valPasswordFormControl.value === passwordFormControl.value">
+                      {{'validatePasswordError' | translate}}
                     </mat-error>
                   </mat-form-field>
                   <mat-form-field class="example-full-width">
-                    <mat-label>Telefon</mat-label>
+                    <mat-label>{{'telephone' | translate}}</mat-label>
                     <input type="text" matInput [formControl]="telefonFormControl" placeholder="627847564">
-                    <mat-error *ngIf="telefonFormControl.hasError('text') && !telefonFormControl.hasError('required')">
-                      Please enter a valid phone number
-                    </mat-error>
                     <mat-error *ngIf="telefonFormControl.hasError('required')">
-                      Telephone is <strong>required</strong>
+                      {{'telephoneRequired' | translate}} <strong>{{'Required' | translate}}</strong>
                     </mat-error>
                   </mat-form-field>
               </form>
-              <button mat-raised-button class="loginbtt" (click)="Register()">Register</button>
+              <button mat-raised-button class="loginbtt" (click)="Register()">{{'register' | translate}}</button>
               <!-- <div class="space_line">
                 <div class="space_line_1">
                     <mat-divider></mat-divider>
@@ -91,3 +74,4 @@
 </mat-grid-list>
 
 
+</div>

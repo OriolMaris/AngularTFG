@@ -1,7 +1,11 @@
 mat-grid-list{
-    background-color: lightsteelblue;
+  background-color: #FFE4B5;
 }
 
+.background{
+  background-color: #FFE4B5;
+  height: 100%;
+}
 
 .colum {
     width: 100%;
@@ -27,6 +31,9 @@ mat-grid-list{
   .loginbtt {
     width: 128px;
     margin-top: 8px;
+}
+button{
+  background-color: #FF8C00;
 }
 
   .space_line {

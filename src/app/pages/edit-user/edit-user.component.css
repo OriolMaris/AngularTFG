@@ -1,5 +1,5 @@
 mat-grid-list{
-    background-color: lightsteelblue;
+    background-color: #FFE4B5;
 }
 
 
@@ -53,3 +53,13 @@ mat-grid-list{
     left: 8px;
     top: 8px;
   }
+
+  button{
+    background-color: #FF8C00;
+}
+
+
+.background{
+  background-color: #FFE4B5;
+  height: 100%;
+}

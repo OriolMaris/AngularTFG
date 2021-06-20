@@ -1,5 +1,6 @@
 mat-grid-list{
-    background-color: lightsteelblue;
+    background-color: #FFE4B5;
+
 }
 
 .photo{
@@ -79,6 +80,7 @@ mat-radio-group{
 
 .icons_div{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -116,17 +118,20 @@ mat-divider{
 }
 
 ::ng-deep .mat-radio-button.mat-radio-disabled.mat-radio-checked .mat-radio-outer-circle, .mat-radio-button.mat-radio-disabled .mat-radio-outer-circle {
-    border-color: red;
-    color: red;
+    border-color: rgb(80, 80, 80);
+    color: rgb(80, 80, 80);
 }
 
 ::ng-deep .mat-radio-button.mat-radio-disabled .mat-radio-inner-circle {
-    background-color: red;
+    background-color: rgb(80, 80, 80);
 
 }
 
 ::ng-deep .mat-radio-button.mat-radio-disabled .mat-radio-label-content {
     color: black;
+}
+button{
+    background-color: #FF8C00;
 }
 
 .new_test{
@@ -134,9 +139,14 @@ mat-divider{
     height: 100%;
     width: 100%;
     top: 0;
+    left: 16px;
+}
+.new_test2{
+font-weight: 600;
 }
 
 mat-button-toggle{
     border-radius: 25px;
-    background-color:chartreuse;
+    background-color: #FFE4B5;
+
 }

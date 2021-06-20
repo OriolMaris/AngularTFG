@@ -1,5 +1,5 @@
 mat-grid-list{
-  background-color: lightsteelblue;
+  background-color: #FFE4B5;
 }
 
 .back_button {
@@ -34,7 +34,6 @@ mat-grid-list{
   padding-top: 10px;
   padding-left: 16px;
   font-size: larger;
-  font-weight: bold;
 }
 
 .name_race{
@@ -52,4 +51,22 @@ mat-grid-list{
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+mat-tab-group{
+  background-color: #FF8C00;
+}
+
+mat-button-toggle{
+  background-color: #FF8C00;
+}
+.mat-button-toggle-button {
+  background-color: #FF8C00;
+
+}
+
+.background{
+  background-color: #FFE4B5;
+  height: 100%;
+
 }

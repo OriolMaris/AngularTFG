@@ -1,3 +1,5 @@
+
+<div class="background">
 <mat-accordion>
     <mat-expansion-panel [(expanded)]="panelOpenState" 
     >
@@ -6,36 +8,32 @@
           <div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div> 
         </mat-panel-title>
         <mat-panel-description>
-          Adv Search
+          {{'advSearch' | translate}}
         </mat-panel-description>
     </mat-expansion-panel-header>
 
     <form class="example-form">
         <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
+          <mat-label>{{'name' | translate}}</mat-label>
           <input type="text" matInput [formControl]="nameFormControl" placeholder="Ex. Pedro Martinez" name="Name">
-          <mat-error *ngIf="nameFormControl.hasError('email') && !nameFormControl.hasError('required')">
-            Please enter a valid name 
-          </mat-error>
+
           <mat-error *ngIf="nameFormControl.hasError('required')">
-            Name is <strong>required</strong>
+            {{'nameREquired' | translate}} <strong>{{'Required' | translate}}</strong>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <mat-label>Age</mat-label>
+            <mat-label>{{'age' | translate}}</mat-label>
             <input type="text" matInput [formControl]="ageFormControl" placeholder="Ex. pedro@gmail.com" name="Age">
-            <mat-error *ngIf="ageFormControl.hasError('email') && !ageFormControl.hasError('required')">
-              Please enter a valid email address
-            </mat-error>
+
             <mat-error *ngIf="ageFormControl.hasError('required')">
-              Email is <strong>required</strong>
+              {{'ageRequired' | translate}} <strong>{{'Requireda' | translate}}</strong>
             </mat-error>
         </mat-form-field>
 
 
 
           <mat-form-field class="example-full-width">
-            <mat-label>Race</mat-label>
+            <mat-label>{{'race' | translate}}</mat-label>
             <input type="text"
                    placeholder="Pick one"
                    aria-label="Number"
@@ -50,7 +48,7 @@
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <mat-label>City</mat-label>
+            <mat-label>{{'city' | translate}}</mat-label>
             <input type="text"
                    placeholder="Pick one"
                    aria-label="Number2"
@@ -67,7 +65,7 @@
           
 
         <mat-form-field appearance="fill">
-            <mat-label>Sexe</mat-label>
+            <mat-label>{{'sexe' | translate}}</mat-label>
             <mat-select [(ngModel)]="selectedSexe" name="sexe">
               <mat-option *ngFor="let sexe of sexes" [value]="sexe.value">
                 {{sexe.value}}
@@ -84,7 +82,7 @@
           </mat-form-field>
         
           <mat-form-field appearance="fill">
-            <mat-label>caracter</mat-label>
+            <mat-label>{{'caracter' | translate}}</mat-label>
             <mat-select [(ngModel)]="selectedCaracter" name="caracter">
               <mat-option *ngFor="let sexe of caracters" [value]="sexe.value">
                 {{sexe.value}}
@@ -92,7 +90,7 @@
             </mat-select>
           </mat-form-field>
           <mat-form-field appearance="fill">
-            <mat-label>Hair_type</mat-label>
+            <mat-label>{{'hairType' | translate}}</mat-label>
             <mat-select [(ngModel)]="selectedHairType" name="hair">
               <mat-option *ngFor="let sexe of hair_types" [value]="sexe.value">
                 {{sexe.value}}
@@ -106,7 +104,7 @@
       <div class="default_div_left">
         <div class="radio-group">
             <div class="span_text">
-                Tamany:
+              {{'size' | translate}}:
             </div>
             <mat-radio-group
             [(ngModel)]="tamanyToggle"
@@ -116,19 +114,19 @@
             
             >
             <mat-radio-button value="small" (click)="writeTest()">
-                Petit
+              {{'small' | translate}}
             </mat-radio-button>
             <mat-radio-button value="medium" (click)="writeTest()">
-                Mitjà
+              {{'medium' | translate}}
             </mat-radio-button>
             <mat-radio-button value="big" (click)="writeTest()">
-                Gran
+              {{'big' | translate}}
             </mat-radio-button>
         </mat-radio-group>
     </div>
     <div class="radio-group">
         <div class="span_text">
-            Castrat:
+          {{'castrat' | translate}}:
         </div>
         <mat-radio-group 
         value="tamany"
@@ -138,16 +136,16 @@
         
         >
         <mat-radio-button value="true">
-            si
+          {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            no
+          {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
 </div>
 <div class="radio-group">
     <div class="span_text">
-        Conte microxip:
+      {{'microxip' | translate}}:
     </div>
     <mat-radio-group 
     value="tamany"
@@ -157,10 +155,10 @@
     
     >
     <mat-radio-button value="true">
-        si
+      {{'yes' | translate}}
     </mat-radio-button>
     <mat-radio-button value="false">
-        no
+      {{'no' | translate}}
     </mat-radio-button>
 </mat-radio-group>
 </div>
@@ -169,23 +167,23 @@
 <div class="default_div">
     <div class="radio-group">
         <div class="span_text">
-            Vacunat a l'ultim any:
+          {{'vacunated' | translate}}:
         </div>
     <mat-radio-group
     [(ngModel)]="vacunatToggle"
     aria-label="example-radio-group"
     >
         <mat-radio-button value="true">
-            Si
+          {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            No
+          {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
     </div>
     <div class="radio-group">
         <div class="span_text">
-            Desparasitat a l'ultim any:
+          {{'desparasitat' | translate}}:
         </div>
     <mat-radio-group
     [(ngModel)]="desparasitatToggle" 
@@ -193,22 +191,22 @@
     aria-label="example-radio-group-2"
     >
         <mat-radio-button value="true">
-            si
+          {{'yes' | translate}}
         </mat-radio-button>
         <mat-radio-button value="false">
-            no
+          {{'no' | translate}}
         </mat-radio-button>
     </mat-radio-group>
 </div>
 </div>
 </div>
 
-        <mat-button-toggle (click)="Search()">Search</mat-button-toggle>
-        <mat-button-toggle (click)="closeExpansion()">Cancel</mat-button-toggle>
+        <mat-button-toggle (click)="Search()">{{'search' | translate}}</mat-button-toggle>
+        <mat-button-toggle (click)="closeExpansion()">{{'cancel' | translate}}</mat-button-toggle>
     </mat-expansion-panel>
 </mat-accordion>
 
-<mat-tab-group mat-align-tabs="center" backgroundColor="primary" [selectedIndex]="">
+<mat-tab-group mat-align-tabs="center"[selectedIndex]="">
     <mat-tab label="Adv Search" >
         <app-adv-grid2></app-adv-grid2>
     </mat-tab>
@@ -217,4 +215,4 @@
 
 
 <app-footer class="footer-header"></app-footer>
-
+</div>

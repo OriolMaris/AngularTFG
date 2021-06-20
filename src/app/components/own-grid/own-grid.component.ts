@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserServiceService } from 'src/app/user-service.service';
 
@@ -7,7 +7,7 @@ import { UserServiceService } from 'src/app/user-service.service';
   templateUrl: './own-grid.component.html',
   styleUrls: ['./own-grid.component.css']
 })
-export class OwnGridComponent implements OnInit {
+export class OwnGridComponent implements OnInit, OnChanges {
 
   public ownAnimals: BehaviorSubject<any[]> = new BehaviorSubject<any[]> ([]);
   public ownAnimalsV2;
@@ -17,6 +17,17 @@ export class OwnGridComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.userService.GetUsersAnimals();
+
+    this.ownAnimals = this.userService.ownAnimals;
+    this.images = this.userService.imagesOwnAnimals;
+    this.userService.ownAnimals.subscribe((data) => {
+      this.ownAnimalsV2 = data;
+    })
+    console.log(this.ownAnimalsV2)
+  }
+
+  ngOnChanges(): void{
     this.userService.GetUsersAnimals();
 
     this.ownAnimals = this.userService.ownAnimals;

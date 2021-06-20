@@ -6,7 +6,8 @@
 }
 
 mat-grid-list{
-    background-color: lightsteelblue;
+    background-color: #FFE4B5;
+
 }
 
 
@@ -74,6 +75,7 @@ mat-grid-list{
 
 mat-radio-button{
     margin: 3px;
+    color: black;
 }
 
 .radio-group{
@@ -127,4 +129,24 @@ textarea{
 .rowDirection{
     display: flex;
     flex-direction: row;
+}
+
+::ng-deep mat-expansion-panel-header{
+    background-color: 	#FFA500;
+}
+mat-expansion-panel{
+    background-color: 	#FFA500;
+}
+mat-accordion{
+    background-color: 	#FFA500;
+}
+
+mat-tab-group{
+    background-color: #FF8C00;
+}
+
+.background{
+    background-color: #FFE4B5;
+    height: 100%;
+
 }
