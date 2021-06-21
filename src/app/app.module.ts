@@ -66,7 +66,8 @@ import { AdvGridComponent } from './components/adv-grid/adv-grid.component';
 import { AdvGrid2Component } from './components/adv-grid2/adv-grid2.component';
 import { RecomendedComponent } from './pages/recomended/recomended.component';
 import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TermsComponent } from './pages/terms/terms.component';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.
     AdvGrid2Component,
     RecomendedComponent,
     RecomendGridComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -141,7 +143,8 @@ import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.
     MatSelectModule,
     MatAutocompleteModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCheckboxModule
 
   ],
   providers: [],

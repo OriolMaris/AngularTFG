@@ -10,7 +10,7 @@
 
     <mat-grid-tile
         [colspan]="4"
-        [rowspan]="5"
+        [rowspan]="5.5"
         > 
         <div class="colum">
             <form class="example-form">
@@ -52,6 +52,13 @@
                       {{'telephoneRequired' | translate}} <strong>{{'Required' | translate}}</strong>
                     </mat-error>
                   </mat-form-field>
+                  <section class="example-section">
+                    <mat-checkbox  class="example-margin" [(ngModel)]="checked" [ngModelOptions]="{standalone: true}">
+                      <div (click)="goToTermsAndConditions()">
+                        {{'termsCondition' | translate}}
+                      </div>
+                    </mat-checkbox>
+                  </section>
               </form>
               <button mat-raised-button class="loginbtt" (click)="Register()">{{'register' | translate}}</button>
               <!-- <div class="space_line">

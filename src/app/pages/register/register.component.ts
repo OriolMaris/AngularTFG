@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/user-service.service';
 import { Location } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,9 +28,13 @@ export class RegisterComponent implements OnInit {
   telefonFormControl = new FormControl('', [
     Validators.required,
   ]);
+
+  checked = false;
+  indeterminate = false;
   
   constructor(private userService: UserServiceService,
-    private location: Location, 
+    private location: Location,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -57,7 +62,14 @@ export class RegisterComponent implements OnInit {
     fd.append('telefon', this.telefonFormControl.value);
     fd.append('Lang', 'cat');
 
-    this.userService.Register(fd);
+    if (this.checked) this.userService.Register(fd);
+  }
+
+
+  goToTermsAndConditions(){
+
+    console.log('entro')
+    this.router.navigate(['/terms']);
   }
 
 }

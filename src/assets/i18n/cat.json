@@ -72,8 +72,10 @@
     "recomendedAnimalError": "No s'ha trobat animals com a recomanats",
     "advAnimalError": "No s'ha trobat animals amb aquests atributs",
 
+    "termsCondition": "Acceptes els temers i condicions de l'aplicació",
+    "close": "Tancar",
+
     "random": "random"
-    
 }
 
 
