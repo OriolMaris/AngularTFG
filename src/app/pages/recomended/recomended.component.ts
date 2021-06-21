@@ -25,17 +25,19 @@ export class RecomendedComponent implements OnInit {
   ngOnInit(): void {
 
     if (!!this.userService.user){
-      if (!!this.userService.user.age) this.age = this.userService.user.age;
-      if (!!this.userService.user.hab) this.hab = this.userService.user.hab;
+      if (!!this.userService.user.edat) this.age = this.userService.user.edat;
+      if (!!this.userService.user.habitatje) this.hab = this.userService.user.habitatje;
       if (!!this.userService.user.caracter) this.caracter = this.userService.user.caracter;
-      if (!!this.userService.user.dispo) this.dispo = this.userService.user.dispo;
+      if (!!this.userService.user.h_dispo) this.dispo = this.userService.user.h_dispo;
     }
     this.animalService.getRecomended(this.age, this.hab, this.caracter , this.dispo);
+
+    console.log('recomennatstttttttsttststststs');
+    console.log(this.userService.user.edat, this.hab, this.caracter , this.dispo);
   }
 
   goBack() {
-    this.location.back()
-
+    this.location.back();
   }
 
 }

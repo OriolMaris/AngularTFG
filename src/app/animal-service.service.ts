@@ -33,6 +33,7 @@ export class AnimalServiceService {
     ) { }
 
   getAnimals(): void{
+    this.animals = new BehaviorSubject<AnimalI[]> ([]);
     this.apiService.GetIndex().subscribe((prods: any) => {
 
       this.animals.next(prods);
@@ -47,6 +48,7 @@ export class AnimalServiceService {
   }
 
   getDogs(): void{
+    this.dogs = new BehaviorSubject<AnimalI[]> ([]);
     this.apiService.GetGossos().subscribe((prods: any) => {
 
       this.dogs.next(prods);
@@ -58,6 +60,7 @@ export class AnimalServiceService {
   }
 
   getCats(): void{
+    this.cats = new BehaviorSubject<AnimalI[]> ([]);
     this.apiService.GetGats().subscribe((prods: any) => {
 
       this.cats.next(prods);
@@ -72,12 +75,13 @@ export class AnimalServiceService {
     this.apiService.GetIndex().subscribe((prods: any) => {
      
 
-      this.animals.next(prods);
-      console.log(prods);
+      //this.recomendedAnimals.next(prods);
+      //console.log(prods);
 
       //if (edat > 60) this.animals.value.sort( (a, b) => a.age - b.age);
 
       if (edat > 60) {
+
 
         this.animals.value.sort( (a, b) => {   // aixo ordena be per small medium big
           if (a.size === 'small' && b.size != 'small'){
@@ -96,9 +100,13 @@ export class AnimalServiceService {
 
 
       if (!!edat){
+        console.log('entro edat')
+
         data.forEach(element => {
           //comprobar la advSearch
             if (edat > 60) {
+                console.log('entro eda22t')
+
               if (element.species === 'feline' || (element.species === 'cannine' &&  element.size === 'small')) advREsult.push(element);
             }
         })
@@ -108,6 +116,8 @@ export class AnimalServiceService {
       console.log(data);
 
       if (!!hab){
+        console.log('entro habitat')
+
         data.forEach(element => {
           //comprobar la advSearch
           if (hab === 'petita') {
@@ -124,6 +134,8 @@ export class AnimalServiceService {
         advREsult = [];
       }
       if (!!carcater){
+
+        console.log('entro caracter')
         data.forEach(element => {
           //comprobar la advSearch
           if (carcater === 'dinamic') {
@@ -143,6 +155,8 @@ export class AnimalServiceService {
         advREsult = [];
       }
       if (!!dispo){
+        console.log('entro dispo')
+
         data.forEach(element => {
           //comprobar la advSearch
           if (dispo === 'alta') {

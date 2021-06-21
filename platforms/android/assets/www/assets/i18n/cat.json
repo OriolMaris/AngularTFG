@@ -1,10 +1,80 @@
 {
-    "index": {
-        "title": "traducció demo",
-        "text": "This is a simple demonstration app for ngx-translate"
-    },
+   
     "header": {
-        "title": "traducció demo"
-    }
+        "title": "Canvi d'idioma"
+    },
+
+    "emailError": "Si us plau posa una adreça valida",
+    "emailRequired": "L'email és",
+    "Required": "necessari",
+    "Requireda": "necessaria",
+    "passwordRequired": "La contrasenya és",
+    "nameREquired": "El nom es",
+    "validatePasswordError": "Les contrasenyes no coincideixen",
+    "telephoneRequired": "El telefon és",
+    "descriptionRequired": "La descripció és",
+    "ageRequired": "L'edat és",
+    
+
+    "email": "Email",
+    "password": "Contrasenya",
+    "Login": "Inicia Sessió",
+    "dontHaveAccount": "No tens compte?",
+    "register": "Registrar",
+    "name": "Nom",
+    "validatePassword": "Validació de la contrasenya",
+    "recomended": "Recomanats",
+    "advSearch": "Cerca avançada",
+    "favourites": "Preferits",
+    "dogs": "Gossos",
+    "cats": "Gats",
+    "all": "Tots",
+    "tel": "Tel.",
+    "addAnimal": "Afegir Animal",
+    "editAnimal": "Editar Animal",
+    "editUser": "Editar Usuari",
+    "favAnimals": "Animals Preferits",
+    "ownAnimals": "Animals en Propietat",
+    "age": "Edat",
+    "telephone": "Telefon",
+    "hab": "Tamany de l'habitaje",
+    "disp": "Disponibilitat",
+    "carac": "Personalitat",
+    "race": "Raça",
+    "city": "Província",
+    "sexe": "Sexe",
+    "especie": "Espècie",
+    "caracter": "Caràcter",
+    "hairType": "Tipo de pel",
+    "photo": "Foto",
+    "size": "Tamany",
+    "small": "Petit",
+    "medium": "Mitjà",
+    "big": "Gran",
+    "castrat": "Castrat",
+    "yes": "Si",
+    "no": "No",
+    "microxip": "Té microxip",
+    "vacunated": "Vacunant a l'ùltim any",
+    "desparasitat": "Desparasitat a l'ùltim any",
+    "addfav": "Afegir a preferits",
+    "deleteFav": "Eliminar de preferits",
+    "deleteAnimal": "Eliminar Animal",
+    "owner": "Propietari",
+    "search": "Buscar",
+    "cancel": "Cancelar",
+    "description": "Descripció",
+
+    "favAnimalError": "No s'ha trobat animals com a preferits",
+    "ownAnimalError": "No s'ha trobat animals en propietat",
+    "catsAnimalError": "No s'ha trobat gats",
+    "dogsAnimalError": "No s'ha trobat gossos",
+    "recomendedAnimalError": "No s'ha trobat animals com a recomanats",
+    "advAnimalError": "No s'ha trobat animals amb aquests atributs",
+
+    "random": "random"
     
 }
+
+
+

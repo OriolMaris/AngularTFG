@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { LaravelApiService } from 'src/app/laravel-api.service';
@@ -10,6 +11,7 @@ import { loadAnimals } from 'src/app/state/animal.actions';
 import { allAnimals } from 'src/app/state/animal.selector';
 import { loadAnimalIs } from 'src/app/state/animalI.actions';
 import { selectAllAnimalIs, selectAnimalIEntities } from 'src/app/state/animalI.selector';
+import { UserServiceService } from 'src/app/user-service.service';
 import { AppState } from '../../state/app.state';
 
 
@@ -30,22 +32,16 @@ export class IndexComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private service: LaravelApiService,
+    private userService: UserServiceService,
+    private translate: TranslateService,
+
     private store: Store) { }
 
     ngOnInit() {
       console.log('JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ')
       console.log(this.selectedIndex)
-      /*
-      this.store.select(selectAnimalIEntities).subscribe((data) => {
-        console.log(data)
-      })
-      this.store.pipe(select(selectAnimalIEntities)).subscribe((data) => {
-        console.log(data)
-      })
-      */
     
-    
-
+    this.translate.use(this.userService.user.Lang);
     this.store.dispatch(loadAnimals())
     
   }
@@ -70,6 +66,10 @@ export class IndexComponent implements OnInit {
 
   gotoRecomended(){
     this.router.navigate(['/recomended']);
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
   }
 
 }

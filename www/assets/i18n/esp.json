@@ -1,0 +1,84 @@
+{
+    "header": {
+        "title": "Cambio de idioma"
+    },
+
+    "emailError": "Por favor pon una dirección valida",
+    "emailRequired": "El email es",
+    "Required": "necesario",
+    "Requireda": "necesaria",
+    "passwordRequired": "La contraseña es",
+    "nameREquired": "El nombre se",
+    "validatePasswordError": "Las contraseñas no coinciden",
+    "telephoneRequired": "El teléfono es",
+    "descriptionRequired": "La descripción es",
+    "ageRequired": "La edad es",
+    
+
+    "email": "Email",
+    "password": "Contraseña",
+    "Login": "Iniciar Sesión",
+    "dontHaveAccount": "¿No tienes cuenta?",
+    "register": "Registrarse",
+    "name": "Nombre",
+    "validatePassword": "Validación de la contraseña",
+    "recomended": "Recomendados",
+    "advSearch": "Búsqueda Avanzada",
+    "favourites": "Favoritos",
+    "dogs": "Perros",
+    "cats": "Gatos",
+    "all": "Totos",
+    "tel": "Tel.",
+    "addAnimal": "Añadir Animal",
+    "editAnimal": "Editar Animal",
+    "editUser": "Editar Usuario",
+    "favAnimals": "Animales Favoritos",
+    "ownAnimals": "Animales en Propiedad",
+    "age": "Edat",
+    "telephone": "Teléfono",
+    "hab": "Tamaño del habitaje",
+    "disp": "Disponibilidad",
+    "carac": "Personalidad",
+    "race": "Raza",
+    "city": "Provincia",
+    "sexe": "Sexo",
+    "especie": "Especie",
+    "caracter": "Carácter",
+    "hairType": "Tipo de pelo",
+    "photo": "Foto",
+    "size": "Tamaño",
+    "small": "Pequeño",
+    "medium": "Mediano",
+    "big": "Grande",
+    "castrat": "Castrado",
+    "yes": "Si",
+    "no": "No",
+    "microxip": "Tiene microxip",
+    "vacunated": "Vacunando al ultimo año",
+    "desparasitat": "Desparasitado al ultimo año",
+    "addfav": "Añadir a favoritos",
+    "deleteFav": "Eliminar de favoritos",
+    "deleteAnimal": "Eliminar Animal",
+    "owner": "Propietario",
+    "search": "Buscar",
+    "cancel": "Cancelar",
+    "description": "Descripcion",
+
+    "favAnimalError": "No se encontraron animales como favoritos",
+    "ownAnimalError": "No se encontraron animales en propiedad",
+    "catsAnimalError": "No se encontraron gatos",
+    "dogsAnimalError": "No se encontraron perros",
+    "recomendedAnimalError": "No se encontraron animales recomendados",
+    "advAnimalError": "No se encontraron animales con estos atributos",
+
+
+
+
+
+
+
+
+
+
+    "random": "random"
+}

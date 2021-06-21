@@ -28,4 +28,4 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </mat-grid-list>
 
 
-<div class="noAnimals" *ngIf="!!ownAnimals | async"> {{'favAnimalError' | translate}}</div>
+<div class="noAnimals" *ngIf="!hasData()"> {{'ownAnimalError' | translate}}</div>

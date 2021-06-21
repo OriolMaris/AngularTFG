@@ -42,12 +42,16 @@ export class UserServiceService {
 
   LogOut() {
     return this.apiService.LogOut(this.token).subscribe((data : any) => {
+      console.log(data);
       this.user = null;
       this.token = null;
+      this.router.navigate(['/login']);
+
     });
   }
 
   GetUsersAnimals(){
+    this.ownAnimals = new BehaviorSubject<any[]> ([]);
     return this.apiService.GetUsersAnimals(this.user.id).subscribe((data : any) => {
       this.ownAnimals.next(data);
       console.log(data);
@@ -80,8 +84,10 @@ export class UserServiceService {
   
 
   GetUsersFavAnimals(){
+    this.favAnimals = new BehaviorSubject<any[]> ([]);
     return this.apiService.GetUsersFavAnimals(this.user.id).subscribe((data : any) => {
       this.favAnimals.next(data.favourites);
+      console.log('data.favourites');
       console.log(data.favourites);
 
       data.favourites.forEach(element => {
@@ -113,6 +119,12 @@ export class UserServiceService {
     return this.apiService.PutUser(body, id, '').subscribe((data : any) => {
       this.user = data;
       this.router.navigate(['/user']);
+    });
+  }
+
+  editUserLang(body, id){
+    return this.apiService.PutUser(body, id, '').subscribe((data : any) => {
+      this.user = data;
     });
   }
 

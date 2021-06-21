@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
     fd.append('password', this.passwordFormControl.value);
     fd.append('password_confirmation', this.valPasswordFormControl.value);
     fd.append('telefon', this.telefonFormControl.value);
-    fd.append('Lang', 'esp');
+    fd.append('Lang', 'cat');
 
     this.userService.Register(fd);
   }

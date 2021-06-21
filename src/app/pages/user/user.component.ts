@@ -25,9 +25,6 @@ export class UserComponent implements OnInit {
     console.log(this.user)
     console.log(this.userService.user)
     console.log('now fav animals')
-
-    
-
   }
 
   goBack() {

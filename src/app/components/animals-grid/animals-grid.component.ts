@@ -26,7 +26,6 @@ export class AnimalsGridComponent implements OnInit, OnChanges {
 
   constructor(private route: ActivatedRoute,
     private router: Router, 
-    private location: Location,
     private store: Store,
     private serviceAnimal: AnimalServiceService) { }
 
@@ -63,6 +62,17 @@ export class AnimalsGridComponent implements OnInit, OnChanges {
 
     this.router.navigate(['/animal']);
 
+  }
+
+
+  hasData(){
+
+    let bool;
+    this.AllAnimals.subscribe((data) => {
+      if (data.length === 0) bool = false;
+      else bool = true;
+    })
+    return bool;
   }
 
 

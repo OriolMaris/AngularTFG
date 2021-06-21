@@ -24,7 +24,7 @@
     "name": "Nom",
     "validatePassword": "Validació de la contrasenya",
     "recomended": "Recomanats",
-    "advSearch": "Bùsqueda avançada",
+    "advSearch": "Cerca avançada",
     "favourites": "Preferits",
     "dogs": "Gossos",
     "cats": "Gats",
@@ -41,7 +41,7 @@
     "disp": "Disponibilitat",
     "carac": "Personalitat",
     "race": "Raça",
-    "city": "Comarca",
+    "city": "Província",
     "sexe": "Sexe",
     "especie": "Espècie",
     "caracter": "Caràcter",
@@ -66,15 +66,11 @@
     "description": "Descripció",
 
     "favAnimalError": "No s'ha trobat animals com a preferits",
-
-
-
-
-
-
-
-
-
+    "ownAnimalError": "No s'ha trobat animals en propietat",
+    "catsAnimalError": "No s'ha trobat gats",
+    "dogsAnimalError": "No s'ha trobat gossos",
+    "recomendedAnimalError": "No s'ha trobat animals com a recomanats",
+    "advAnimalError": "No s'ha trobat animals amb aquests atributs",
 
     "random": "random"
     

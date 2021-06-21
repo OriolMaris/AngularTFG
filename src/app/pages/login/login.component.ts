@@ -3,7 +3,8 @@ import { Location } from '@angular/common'
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/user-service.service';
-
+import { TranslateService } from '@ngx-translate/core';
+//import jsonSe from '../../../assets/i18n/cat. ';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private location: Location,
     private router: Router,
-    private userService: UserServiceService) { }
+    private userService: UserServiceService,
+    private translate: TranslateService,
+
+    ) { }
 
   ngOnInit(): void {
+    this.translate.setDefaultLang('cat');
+    this.translate.use('cat');
+    this.translate.use('cat');
+
+    //this.translate.getTranslation('cat');
   }
 
   goBack() {
@@ -45,6 +54,10 @@ export class LoginComponent implements OnInit {
 
   gotoRegister(){
     this.router.navigate(['/register']);
+  }
+
+  useLanguage(language: string): void {
+    
   }
 
 }

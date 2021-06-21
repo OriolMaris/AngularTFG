@@ -15,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+
 //
 
 //
@@ -64,6 +66,7 @@ import { AdvGridComponent } from './components/adv-grid/adv-grid.component';
 import { AdvGrid2Component } from './components/adv-grid2/adv-grid2.component';
 import { RecomendedComponent } from './pages/recomended/recomended.component';
 import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.component';
+
 
 
 @NgModule({
@@ -147,5 +150,5 @@ import { RecomendGridComponent } from './components/recomend-grid/recomend-grid.
 export class AppModule { }
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }

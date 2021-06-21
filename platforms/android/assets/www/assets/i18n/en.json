@@ -1,9 +1,84 @@
 {
-    "index": {
-        "title": "Translation demo",
-        "text": "This is a simple demonstration app for ngx-translate"
-    },
     "header": {
-        "title": "Translation demo"
-    }
+        "title": "Change the language"
+    },
+
+    "emailError": "Please enter a valid address",
+    "emailRequired": "The email is",
+    "Required": "necessary",
+    "Requireda": "necessary",
+    "passwordRequired": "The password is",
+    "nameREquired": "The name is",
+    "validatePasswordError": "Passwords do not match",
+    "telephoneRequired": "The phone is",
+    "descriptionRequired": "The description is",
+    "ageRequired": "Age is",
+    
+
+    "email": "Email",
+    "password": "Password",
+    "Login": "Log in",
+    "dontHaveAccount": "Don't you have an account?",
+    "register": "Register",
+    "name": "First name",
+    "validatePassword": "Password validation",
+    "recomended": "Recommended",
+    "advSearch": "Advanced search",
+    "favourites": "Favorites",
+    "dogs": "Dogs",
+    "cats": "Cats",
+    "all": "All",
+    "tel": "Tel.",
+    "addAnimal": "Add Animal",
+    "editAnimal": "Edit Animal",
+    "editUser": "Edit User",
+    "favAnimals": "Favorite Animals",
+    "ownAnimals": "Animals in Property",
+    "age": "Age",
+    "telephone": "Phone",
+    "hab": "Size of the home",
+    "disp": "Availability",
+    "carac": "Personality",
+    "race": "Race",
+    "city": "Province",
+    "sexe": "Sex",
+    "especie": "Species",
+    "caracter": "Character",
+    "hairType": "Skin type",
+    "photo": "Photo",
+    "size": "Size",
+    "small": "Small",
+    "medium": "Medium",
+    "big": "Big",
+    "castrat": "Castrated",
+    "yes": "Yes",
+    "no": "No",
+    "microxip": "It has a microchip",
+    "vacunated": "Vaccinated in the last year",
+    "desparasitat": "Deworming in the last year",
+    "addfav": "Add to favorites",
+    "deleteFav": "Remove from favorites",
+    "deleteAnimal": "Remove Animal",
+    "owner": "Owners",
+    "search": "Search",
+    "cancel": "Cancel",
+    "description": "Description",
+
+    "favAnimalError": "No animals were found as favorites",
+    "ownAnimalError": "No animals were found on property",
+    "catsAnimalError": "No cats were found",
+    "dogsAnimalError": "No dogs were found",
+    "recomendedAnimalError": "No animals were found as recomended",
+    "advAnimalError": "No animals with these attributes were found",
+
+
+
+
+
+
+
+
+
+
+    "random": "random"
 }

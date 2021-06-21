@@ -1,5 +1,9 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { BehaviorSubject } from 'rxjs';
+import { Animal } from 'src/app/models/model';
+import { selectAnimal } from 'src/app/state/animal.actions';
 import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
@@ -13,7 +17,10 @@ export class FavGridComponent implements OnInit, OnChanges {
   public favAnimalsV2;
   public images = [];
 
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService,
+    private router: Router, 
+    private store: Store,
+    ) { }
 
   ngOnInit(): void {
 
@@ -24,7 +31,8 @@ export class FavGridComponent implements OnInit, OnChanges {
     this.userService.favAnimals.subscribe((data) => {
       this.favAnimalsV2 = data;
     })
-    console.log(this.favAnimalsV2)
+
+    
   }
 
   ngOnChanges(): void {
@@ -36,6 +44,26 @@ export class FavGridComponent implements OnInit, OnChanges {
       this.favAnimalsV2 = data;
     })
     console.log(this.favAnimalsV2)
+  }
+
+
+  hasData(){
+
+    let bool;
+    this.favAnimals.subscribe((data) => {
+      if (data.length === 0) bool = false;
+      else bool = true;
+    })
+    return bool;
+  }
+
+  
+  gotoAnimal(animal: Animal) {
+
+    this.store.dispatch(selectAnimal({selectedAnimal: animal}));
+
+    this.router.navigate(['/animal']);
+
   }
 
 }
