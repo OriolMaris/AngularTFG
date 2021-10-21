@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Location } from '@angular/common'
 import { FormControl, Validators } from '@angular/forms';
 import { AnimalI } from 'src/app/models/animal';
@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { cities } from 'src/assets/cities/cities';
-import { races } from 'src/assets/races/races';
+import { races, racesCats, racesDogs } from 'src/assets/races/races';
 import { UserServiceService } from 'src/app/user-service.service';
 import { AnimalServiceService } from 'src/app/animal-service.service';
 
@@ -102,7 +102,34 @@ export class AddAnimalComponent implements OnInit {
 
   ) { }
 
+  saverange(event){
+    
+     
+    if (event.srcElement.innerText === 'feline'){
+      this.options = racesCats
+      console.log(this.options)
+
+    }
+    else if (event.srcElement.innerText === 'cannine') {
+      this.options = racesDogs
+      console.log(this.options)
+      
+    }
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+
+    
+  }
+
+  getPosts(event){
+    console.log('hereeeeeeee')
+  }
+
   ngOnInit(): void {
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))

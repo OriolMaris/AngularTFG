@@ -40,8 +40,8 @@
                 </mat-form-field>
               <mat-form-field appearance="fill">
                   <mat-label>{{'especie' | translate}}</mat-label>
-                  <mat-select [(ngModel)]="selectedEspecie" name="especie">
-                    <mat-option *ngFor="let food of especies" [value]="food.value">
+                  <mat-select [(ngModel)]="selectedEspecie" name="especie" >
+                    <mat-option *ngFor="let food of especies" [value]="food.value" (click)="saverange($event)"  >
                       {{food.value}}
                     </mat-option>
                   </mat-select>
