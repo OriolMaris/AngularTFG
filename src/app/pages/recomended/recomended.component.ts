@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { AnimalServiceService } from 'src/app/animal-service.service';
 import { UserServiceService } from 'src/app/user-service.service';
 import { Location } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recomended',
@@ -19,6 +20,7 @@ export class RecomendedComponent implements OnInit, OnChanges {
   constructor(private animalService: AnimalServiceService,
     private userService: UserServiceService,
     private location: Location, 
+    private router: Router, 
 
     ) { }
 
@@ -74,6 +76,9 @@ export class RecomendedComponent implements OnInit, OnChanges {
 
   goBack() {
     this.location.back();
+  }
+  editUser(){
+    this.router.navigate(['/editUser']);
   }
 
 }

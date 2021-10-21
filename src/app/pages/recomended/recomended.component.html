@@ -1,7 +1,10 @@
 
 
 <div class="background">
-<div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button></div>
+<div class="back_button"> <button mat-mini-fab (click)="goBack()"><mat-icon class="white-icon">arrow_back</mat-icon></button> 
+    <mat-button-toggle style="width: 50%; margin: 4px; margin-left: 35%;" (click)="editUser()">
+    {{'editUser' | translate}}
+</mat-button-toggle></div>
 <mat-tab-group mat-align-tabs="center"[selectedIndex]="">
     <mat-tab label="{{'recomended' | translate}}" >
         <app-recomend-grid></app-recomend-grid>

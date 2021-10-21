@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { LaravelApiService } from './laravel-api.service';
 import { DialogOverviewExampleDialog3, DialogOverviewExampleDialog4 } from './pages/login/login.component';
 import { DialogOverviewExampleDialog, DialogOverviewExampleDialog2 } from './pages/register/register.component';
+import { Location } from '@angular/common'
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class UserServiceService {
   constructor(private apiService: LaravelApiService,
     private router: Router,
     public dialog: MatDialog,
+    private location: Location,
     ) { }
 
   Register(body) {
@@ -156,7 +158,8 @@ export class UserServiceService {
   editUser(body, id){
     return this.apiService.PutUser(body, id, '').subscribe((data : any) => {
       this.user = data;
-      this.router.navigate(['/user']);
+      //this.router.navigate(['/user']);
+      this.location.back()
     });
   }
 

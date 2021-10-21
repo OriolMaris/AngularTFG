@@ -34,21 +34,25 @@ export class EditUserComponent implements OnInit {
     {value: 'jove'},
     {value: 'adult'},
     {value: 'gran'},
+    {value: 'null'},
   ];
   habitatjes: any[] = [
     {value: 'petita'},
     {value: 'mitjana'},
     {value: 'gran'},
+    {value: 'null'},
   ];
   disponibilitats: any[] = [
     {value: 'alta'},
     {value: 'poco'},
+    {value: 'null'},
   ];
   caracters: any[] = [
     {value: 'dinamic'},
     {value: 'independent'},
     {value: 'tranquil'},
     {value: 'fort'},
+    {value: 'null'},
   ];
 
   constructor(
