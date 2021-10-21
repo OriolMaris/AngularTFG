@@ -72,11 +72,11 @@ export class AdvSearchComponent implements OnInit {
     {value: 'corto'}
   ];
 
-  tamanyToggle: string;
-  castratToggle: string;
-  microxipToggle: string;
-  vacunatToggle: string;
-  desparasitatToggle: string;
+  tamanyToggle: string = '';
+  castratToggle: string = '';
+  microxipToggle: string = '';
+  vacunatToggle: string = '';
+  desparasitatToggle: string = '';
 
 
   myControl = new FormControl();
@@ -112,7 +112,35 @@ export class AdvSearchComponent implements OnInit {
   }
 
   Search(){
-    this.serviceAnimal.getadvSearchAnimals(this.nameFormControl.value, this.ageFormControl.value, this.myControl.value, this.myControl2.value, this.selectedSexe, this.selectedEspecie, this.selectedCaracter, this.selectedHairType, this.tamanyToggle, this.castratToggle, this.microxipToggle, this.vacunatToggle, this.desparasitatToggle);
+
+
+    let fd = new FormData();
+
+    console.log('inside search')
+    
+    if ( this.nameFormControl.value !== '') fd.append('name', this.nameFormControl.value ?? null)
+    if ( this.ageFormControl.value !== '') fd.append('age', this.ageFormControl.value ?? null)
+    if ( this.selectedSexe !== '') fd.append('sexe', this.selectedSexe ?? null)
+    if ( this.raceFormControl.value !== '') fd.append('race', this.raceFormControl.value ?? null)
+    if ( this.selectedEspecie !== '') fd.append('especie', this.selectedEspecie ?? null)
+    if ( this.selectedCaracter !== '') fd.append('caracter', this.selectedCaracter ?? null)
+    if ( this.selectedHairType !== '') fd.append('hair_type', this.selectedHairType ?? null)
+    if ( this.castratToggle !== '') fd.append('castrat', this.castratToggle ?? null)
+    if ( this.myControl2.value !== '' &&  this.myControl2.value !== null) fd.append('ciutat', this.myControl2.value ?? null)
+    if ( this.tamanyToggle !== '') fd.append('size', this.tamanyToggle ?? null)
+    if ( this.description.value !== '') fd.append('description', this.description.value ?? null)
+    if ( this.microxipToggle !== '') fd.append('microxip', this.microxipToggle ?? null)
+    if ( this.vacunatToggle !== '') fd.append('vacunat', this.vacunatToggle ?? null)
+    if ( this.desparasitatToggle !== '') fd.append('desparasitat', this.desparasitatToggle ?? null)
+
+    console.log(this.myControl2.value)
+
+    fd.forEach((value,key) => {
+      console.log(key+value)
+    });
+
+
+    this.serviceAnimal.getadvSearchAnimals2(fd);
     this.panelOpenState = !this.panelOpenState;
 
   }

@@ -72,6 +72,17 @@ export class LaravelApiService {
     );
   }
 
+  PostAnimal2(body: FormData, token) {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + token
+    });
+    console.log(body)
+    return this.http.post(
+      this.url + 'animals/advSearch',
+      body,
+    );
+  }
+
   PutAnimal(body, id, token) {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + token

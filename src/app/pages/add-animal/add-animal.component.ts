@@ -175,6 +175,7 @@ export class AddAnimalComponent implements OnInit {
     fd.append('esterizated', this.desparasitatToggle)
 
     console.log(this.userService.user.id)
+    console.log(fd)
 
     this.serviceAnimal.addAnimal(fd);
   }

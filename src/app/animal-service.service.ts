@@ -32,6 +32,8 @@ export class AnimalServiceService {
     private router: Router
     ) { }
 
+    
+
   getAnimals(): void{
     this.animals = new BehaviorSubject<AnimalI[]> ([]);
     this.apiService.GetIndex().subscribe((prods: any) => {
@@ -180,6 +182,19 @@ export class AnimalServiceService {
 
     console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz');
     console.log(this.imagesAnimal);
+  }
+
+  getadvSearchAnimals2(form){
+    this.apiService.PostAnimal2(form, 'hello').subscribe((data: any) => {
+      console.log('data', data)
+      this.advSearchAnimals.next(data);
+      data.forEach(element => {
+        this.getImageAnimals(element.photo_name, element.id);
+  
+        console.log(this.imagesadvSearchAnimals)
+        })
+    })
+
   }
 
   getadvSearchAnimals(name, age, race, city, sexe, especie, caracter, hair_type, size, castrat, microxip, vacunat, desparasitat): void{
