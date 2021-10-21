@@ -15,21 +15,37 @@
             <form class="example-form">
                 <mat-form-field class="example-full-width">
                   <mat-label>{{'name' | translate}}</mat-label>
-                  <input type="text" matInput [formControl]="nameFormControl" placeholder="Ex. Pedro Martinez" name="Name">
+                  <input type="text" matInput [formControl]="nameFormControl" placeholder="Thor" name="Name">
                   <mat-error *ngIf="nameFormControl.hasError('required')">
                     {{'nameREquired' | translate}} <strong>{{'Required' | translate}}</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <mat-label>{{'age' | translate}}</mat-label>
-                    <input type="text" matInput [formControl]="ageFormControl" placeholder="Ex. pedro@gmail.com" name="Age">
+                    <input type="text" matInput [formControl]="ageFormControl" placeholder="5" name="Age">
 
                     <mat-error *ngIf="ageFormControl.hasError('required')">
                       {{'ageRequired' | translate}} <strong>{{'Requireda' | translate}}</strong>
                     </mat-error>
                 </mat-form-field>
 
-
+                <mat-form-field appearance="fill">
+                  <mat-label>{{'sexe' | translate}}</mat-label>
+                  <mat-select [(ngModel)]="selectedSexe" name="sexe">
+                    <mat-option *ngFor="let sexe of sexes" [value]="sexe.value">
+                      {{sexe.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              <mat-form-field appearance="fill">
+                  <mat-label>{{'especie' | translate}}</mat-label>
+                  <mat-select [(ngModel)]="selectedEspecie" name="especie">
+                    <mat-option *ngFor="let food of especies" [value]="food.value">
+                      {{food.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
 
                   <mat-form-field class="example-full-width">
                     <mat-label>{{'race' | translate}}</mat-label>
@@ -63,23 +79,7 @@
 
                   
 
-                <mat-form-field appearance="fill">
-                    <mat-label>{{'sexe' | translate}}</mat-label>
-                    <mat-select [(ngModel)]="selectedSexe" name="sexe">
-                      <mat-option *ngFor="let sexe of sexes" [value]="sexe.value">
-                        {{sexe.value}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>{{'especie' | translate}}</mat-label>
-                    <mat-select [(ngModel)]="selectedEspecie" name="especie">
-                      <mat-option *ngFor="let food of especies" [value]="food.value">
-                        {{food.value}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                
+              
                   <mat-form-field appearance="fill">
                     <mat-label>{{'caracter' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedCaracter" name="caracter">

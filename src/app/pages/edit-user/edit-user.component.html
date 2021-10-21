@@ -32,7 +32,7 @@
 
                   <mat-form-field class="example-full-width">
                     <mat-label>{{'age' | translate}}</mat-label>
-                    <input type="text" matInput [formControl]="ageFormControl" placeholder="Ex. pedro@gmail.com" name="Age">
+                    <input type="text" matInput [formControl]="ageFormControl" placeholder="50" name="Age">
                     <mat-error *ngIf="ageFormControl.hasError('required')">
                       {{'ageRequired' | translate}} <strong>{{'Requireda' | translate}}</strong>
                     </mat-error>
