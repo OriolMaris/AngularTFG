@@ -184,7 +184,21 @@ export class AnimalServiceService {
     console.log(this.imagesAnimal);
   }
 
-  getadvSearchAnimals2(form){
+  getRecomended2(age, hab, caracter, dispo){
+    this.apiService.PostAnimal3(age, hab, caracter, dispo, 'hello').subscribe((data: any) => {
+      console.log('data getRecomended2', data)
+      this.recomendedAnimals.next(data);
+      
+      data.forEach(element => {
+        this.getImageAnimals(element.photo_name, element.id);
+  
+        console.log(this.imagesadvSearchAnimals)
+        })
+    })
+
+  }
+
+  getadvSearchAnimals2(form: FormData){
     this.apiService.PostAnimal2(form, 'hello').subscribe((data: any) => {
       console.log('data', data)
       this.advSearchAnimals.next(data);

@@ -72,6 +72,32 @@ export class LaravelApiService {
     );
   }
 
+  PostAnimal3(age, hab, caracter, dispo, token) {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + token
+    });
+    console.log(age === 'null' ? null : age, hab === 'null' ? null : hab, caracter === 'null' ? null : caracter, dispo === 'null' ? null : dispo)
+    return this.http.post(
+      this.url + 'animals/recomended',
+      {
+        age: age === 'null' ? null : age,
+        hab:  hab === 'null' ? null : hab,
+        caracter: caracter === 'null' ? null : caracter,
+        dispo: dispo === 'null' ? null : dispo
+      },
+    )
+    return this.http.post(
+      this.url + 'animals/recomended',
+      {
+        age: age,
+        hab: hab,
+        caracter: caracter,
+        dispo: dispo
+      },
+    );
+  }
+
+
   PostAnimal2(body: FormData, token) {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + token

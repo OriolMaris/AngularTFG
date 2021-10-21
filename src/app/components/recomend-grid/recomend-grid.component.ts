@@ -32,30 +32,20 @@ export class RecomendGridComponent implements OnInit, OnChanges {
     
 
     this.AllAnimals = this.serviceAnimal.recomendedAnimals;
+
+    
     this.images = this.serviceAnimal.imagesAnimal;
 
-    console.log('this.images from advSearch component')
-    console.log(this.images)
 
-
-    this.AllAnimals.subscribe((data) => {
-      console.log('this.AllAnimals ------------------------------------->');
-      console.log(data);
-    })
   }
 
   ngOnChanges(): void {
     this.AllAnimals = this.serviceAnimal.recomendedAnimals;
     this.images = this.serviceAnimal.imagesAnimal;
 
-    console.log('this.images from advSearch component')
-    console.log(this.images)
 
 
-    this.AllAnimals.subscribe((data) => {
-      console.log('this.AllAnimals ------------------------------------->');
-      console.log(data);
-    })
+
   }
 
   gotoAnimal(animal: Animal) {
