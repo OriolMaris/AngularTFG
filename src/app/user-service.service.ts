@@ -70,9 +70,9 @@ export class UserServiceService {
     {
     console.log(error)
     console.log(error.error)
-    if (error.error.message === "bad creds") this.openDialogError2()
+    if (error.error.message === "Email not verified") this.openDialogError3()
     else {
-      this.openDialogError3()
+      this.openDialogError2()
     }
     } );
     return false;
