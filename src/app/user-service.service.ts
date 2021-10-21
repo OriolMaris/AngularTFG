@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { LaravelApiService } from './laravel-api.service';
+import { DialogOverviewExampleDialog3, DialogOverviewExampleDialog4 } from './pages/login/login.component';
+import { DialogOverviewExampleDialog, DialogOverviewExampleDialog2 } from './pages/register/register.component';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +22,8 @@ export class UserServiceService {
   public imagesOwnAnimals = [];
 
   constructor(private apiService: LaravelApiService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
     ) { }
 
   Register(body) {
@@ -27,7 +31,33 @@ export class UserServiceService {
     return this.apiService.Register(body).subscribe((data : any) => {
       this.token = data.token;
       this.user = data.user;
-      this.router.navigate(['/index']);
+      this.openDialog()
+    },(error) =>  
+    {
+    console.log(error)
+    this.openDialogError()
+    }
+    )
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+    });
+  }
+  openDialogError(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog2, {
+      width: '250px',
+    });
+  }
+  openDialogError2(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog3, {
+      width: '250px',
+    });
+  }
+  openDialogError3(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog4, {
+      width: '250px',
     });
   }
 
@@ -36,7 +66,15 @@ export class UserServiceService {
       this.token = data.token;
       this.user = data.user;
       this.router.navigate(['/index']);
-    });
+    },(error) =>  
+    {
+    console.log(error)
+    console.log(error.error)
+    if (error.error.message === "bad creds") this.openDialogError2()
+    else {
+      this.openDialogError3()
+    }
+    } );
     return false;
   }
 

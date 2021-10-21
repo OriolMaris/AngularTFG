@@ -60,7 +60,7 @@
                     </mat-checkbox>
                   </section>
               </form>
-              <button mat-raised-button class="loginbtt" (click)="Register()">{{'register' | translate}}</button>
+              <button mat-raised-button class="loginbtt" [disabled]="isButtonDisabled()" (click)="Register()">{{'register' | translate}}</button>
               <!-- <div class="space_line">
                 <div class="space_line_1">
                     <mat-divider></mat-divider>

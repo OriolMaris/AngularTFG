@@ -172,7 +172,7 @@ export class AnimalComponent implements OnInit, OnChanges {
   }
 
   is_owner(){
-    if (this.userService.user.id === this.animal.id){
+    if (this.userService.user.id === this.animal.owner_id){
       return true;
     }
     else return false;

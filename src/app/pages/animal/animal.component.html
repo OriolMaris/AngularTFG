@@ -24,7 +24,7 @@
     [colspan]="4"
     [rowspan]="0.5"
     >
-    <div *ngIf="!is_owner()" class="icons_div">
+    <div *ngIf="is_owner()" class="icons_div">
             <button mat-stroked-button (click)="goEditAnimal()"> {{'editAnimal' | translate}} </button>
     </div>
     </mat-grid-tile>
@@ -32,7 +32,7 @@
     [colspan]="3"
     [rowspan]="0.5"
     >
-    <div *ngIf="!is_owner()" class="icons_div">
+    <div *ngIf="is_owner()" class="icons_div">
             <button mat-stroked-button (click)="openDialog()"> {{'deleteAnimal' | translate}}</button>
     </div>
 </mat-grid-tile>
