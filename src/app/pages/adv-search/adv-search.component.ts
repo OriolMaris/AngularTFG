@@ -62,6 +62,7 @@ export class AdvSearchComponent implements OnInit {
   caracters: any[] = [
     {value: 'Dominante'},
     {value: 'Equilibrado'},
+    {value: 'Docil'},
     {value: 'Sumiso'},
     {value: 'Independiente'},
   ];

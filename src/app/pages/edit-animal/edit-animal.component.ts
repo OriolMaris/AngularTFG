@@ -53,6 +53,7 @@ export class EditAnimalComponent implements OnInit {
     {value: 'Dominante'},
     {value: 'Equilibrado'},
     {value: 'Sumiso'},
+    {value: 'Docil'},
     {value: 'Independiente'},
   ];
   hair_types: any[] = [
