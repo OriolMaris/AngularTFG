@@ -34,7 +34,7 @@
           <mat-label>{{'sexe' | translate}}</mat-label>
           <mat-select [(ngModel)]="selectedSexe" name="sexe">
             <mat-option *ngFor="let sexe of sexes" [value]="sexe.value">
-              {{sexe.value}}
+              {{sexe.value | translate}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -42,7 +42,7 @@
           <mat-label>Especie</mat-label>
           <mat-select [(ngModel)]="selectedEspecie" name="especie">
             <mat-option *ngFor="let food of especies" [value]="food.value">
-              {{food.value}}
+              {{food.value | translate}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -85,7 +85,7 @@
             <mat-label>{{'caracter' | translate}}</mat-label>
             <mat-select [(ngModel)]="selectedCaracter" name="caracter">
               <mat-option *ngFor="let sexe of caracters" [value]="sexe.value">
-                {{sexe.value}}
+                {{sexe.value | translate}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -93,7 +93,7 @@
             <mat-label>{{'hairType' | translate}}</mat-label>
             <mat-select [(ngModel)]="selectedHairType" name="hair">
               <mat-option *ngFor="let sexe of hair_types" [value]="sexe.value">
-                {{sexe.value}}
+                {{sexe.value | translate}}
               </mat-option>
             </mat-select>
           </mat-form-field>

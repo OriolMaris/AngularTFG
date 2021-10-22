@@ -42,7 +42,7 @@
                     <mat-label>{{'hab' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedHab" name="habitatje">
                       <mat-option *ngFor="let sexe of habitatjes" [value]="sexe.value">
-                        {{sexe.value}}
+                        {{sexe.value | translate}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -51,7 +51,7 @@
                     <mat-label>{{'disp' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedDis" name="disponibilitat">
                       <mat-option *ngFor="let sexe of disponibilitats" [value]="sexe.value">
-                        {{sexe.value}}
+                        {{sexe.value | translate}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -60,7 +60,7 @@
                     <mat-label>{{'carac' | translate}}</mat-label>
                     <mat-select [(ngModel)]="selectedCaracter" name="caracters">
                       <mat-option *ngFor="let sexe of caracters" [value]="sexe.value">
-                        {{sexe.value}}
+                        {{sexe.value | translate}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
