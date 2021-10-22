@@ -82,5 +82,31 @@
 
 
 
-    "random": "random"
+    "random": "random",
+
+    "male": "Masculino",
+    "female": "Femenino",
+    "feline": "Felino",
+    "cannine": "Canino",
+    "Dominante": "Dominante",
+    "Equilibrado": "Equilibrado",
+    "Docil": "Docil",
+    "Juganer": "Jugetón",
+    "Independiente": "Independiente",
+    "duro": "Duro",
+    "rizado": "Rizado",
+    "corto": "Corto",
+    "largo": "Largo",
+    "dinamic": "Dinámico",
+    "independent": "Independiente",
+    "tranquil": "Tranquilo",
+    "fort": "Fuerte",
+    "null": "-",
+    "logout": "Cerrar sessión",
+    "login": "Arbir sessión",
+    "petita": "Pequeña",
+    "mitjana": "Mediana",
+    "gran": "Grande",
+    "alta": "Alta",
+    "poco": "Poca"
 }
