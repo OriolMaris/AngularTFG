@@ -82,5 +82,32 @@
 
 
 
-    "random": "random"
+    "random": "random",
+
+    "male": "Male",
+    "female": "Demale",
+    "feline": "Feline",
+    "cannine": "Canine",
+    "Dominante": "Dominant",
+    "Equilibrado": "Balanced",
+    "Docil": "Docile",
+    "Juganer": "Playful",
+    "Independiente": "Independent",
+    "duro": "Tough",
+    "rizado": "Curly",
+    "corto": "Short",
+    "largo": "Long",
+    "dinamic": "Dinamic",
+    "independent": "Independent",
+    "tranquil": "Quiet",
+    "fort": "Powerful",
+    "null": "-",
+    "logout": "Log out",
+    "login": "Log in",
+    "petita": "Small",
+    "mitjana": "Medium",
+    "gran": "Big",
+    "alta": "High",
+    "poco": "Small"
+
 }

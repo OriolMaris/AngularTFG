@@ -75,7 +75,36 @@
     "termsCondition": "Acceptes els temers i condicions de l'aplicació",
     "close": "Tancar",
 
-    "random": "random"
+    "random": "random",
+
+    "male": "masculí",
+    "female": "femení",
+    "feline": "felí",
+    "cannine": "caní",
+    "Dominante": "Dominant",
+    "Equilibrado": "Equilibrat",
+    "Docil": "Dòcil",
+    "Juganer": "Juganer",
+    "Independiente": "Idependent",
+    "duro": "Dur",
+    "rizado": "Risat",
+    "corto": "Curt",
+    "largo": "Llarg",
+    "dinamic": "Dinàmic",
+    "independent": "Independent",
+    "tranquil": "Tranquil",
+    "fort": "Fort",
+    "null": "-",
+    "logout": "Tancar sessió",
+    "login": "Inicia sessió",
+    "petita": "Petita",
+    "mitjana": "Mitjana",
+    "gran": "Gran",
+    "alta": "Alta",
+    "poco": "Poca"
+
+
+    
 }
 
 

@@ -1,4 +1,4 @@
-<mat-grid-list cols="2" rowHeight="2:2">
+<mat-grid-list cols="2" rowHeight="2:2" style=" padding-bottom: 50px;">
     <div *ngFor="let animal of ownAnimals | async">
         <mat-grid-tile>
             <mat-card style=" background-size: cover;"  (click)="gotoAnimal(animal)">
